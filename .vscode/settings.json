@@ -1,0 +1,25 @@
+{
+  "spellright.language": [
+    "en",
+    "en_US"
+  ],
+  "spellright.documentTypes": [
+    "markdown"
+  ],
+  "editor.formatOnSave": true,
+  "xo.enable": true,
+  "xo.format.enable": true,
+	"xo.runtime": "yarn pnpify node",
+  "[typescript]": {
+    "editor.defaultFormatter": "samverschueren.linter-xo"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "samverschueren.linter-xo"
+  },
+  "search.exclude": {
+    "**/.yarn": true,
+    "**/.pnp.*": true
+  },
+  "typescript.tsdk": ".yarn/sdks/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true
+}
