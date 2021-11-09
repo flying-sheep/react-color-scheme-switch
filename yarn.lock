@@ -1641,7 +1641,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-config-xo-typescript@npm:*":
+"eslint-config-xo-typescript@npm:*, eslint-config-xo-typescript@npm:^0.47.1":
   version: 0.47.1
   resolution: "eslint-config-xo-typescript@npm:0.47.1"
   peerDependencies:
@@ -3990,6 +3990,7 @@ __metadata:
     "@yarnpkg/pnpify": ^3.1.1-rc.2
     eslint: ^8.1.0
     eslint-config-xo-react: ^0.25.0
+    eslint-config-xo-typescript: ^0.47.1
     eslint-import-resolver-node: ^0.3.6
     eslint-plugin-react: ^7.26.1
     eslint-plugin-react-hooks: ^4.2.0
