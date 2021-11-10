@@ -1,0 +1,21 @@
+{
+	"private": true,
+	"name": "react-color-scheme-switch-docs",
+	"version": "1.0.0",
+	"license": "GPL-3.0",
+	"files": [
+		"pages/",
+		"doczrc.js",
+		"index.js",
+		"package.json"
+	],
+	"scripts": {
+		"dev": "docz dev",
+		"build": "docz build"
+	},
+	"dependencies": {
+		"cross-spawn": "^7.0.3",
+		"docz": "latest",
+		"react-color-scheme-switch": "1.0.0"
+	}
+}

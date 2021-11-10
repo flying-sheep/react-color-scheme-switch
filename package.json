@@ -1,11 +1,16 @@
 {
 	"name": "react-color-scheme-switch",
 	"version": "1.0.0",
+	"license": "GPL-3.0",
+	"workspaces": [
+		".",
+		"docs"
+	],
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
 	"files": [
-		"./src/",
-		"./dist/"
+		"src/",
+		"dist/"
 	],
 	"exports": {
 		".": "./dist/index.js",
