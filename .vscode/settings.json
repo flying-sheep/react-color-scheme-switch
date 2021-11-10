@@ -9,7 +9,7 @@
   "editor.formatOnSave": true,
   "xo.enable": true,
   "xo.format.enable": true,
-	"xo.runtime": "yarn pnpify node",
+	"xo.path": "./.yarn/sdks/xo/index.js",
   "[typescript]": {
     "editor.defaultFormatter": "samverschueren.linter-xo"
   },
