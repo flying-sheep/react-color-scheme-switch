@@ -9,8 +9,8 @@
   "editor.formatOnSave": true,
   "xo.enable": true,
   "xo.format.enable": true,
-	"xo.runtime": "./.yarn/sdks/xo/node.sh",
-	"xo.path": "./.yarn/sdks/xo/index.js",
+  "xo.runtime": "./.yarn/sdks/xo/node.sh",
+  "xo.path": "./.yarn/sdks/xo/index.js",
   "[typescript]": {
     "editor.defaultFormatter": "samverschueren.linter-xo"
   },
