@@ -8,3 +8,6 @@
 .cache/
 
 /dist/
+/scripts/*.d.ts
+/scripts/*.js
+/scripts/*.js.map
