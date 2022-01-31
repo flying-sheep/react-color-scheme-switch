@@ -36,6 +36,9 @@
 			"built": false
 		}
 	},
+	"engines": {
+		"node": ">=17.4"
+	},
 	"scripts": {
 		"prepare": "husky install",
 		"build": "tsc",

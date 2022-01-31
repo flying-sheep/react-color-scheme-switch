@@ -1,3 +1,3 @@
-#!/bin/sh
+#!/bin/bash
 cd "$(dirname -- "$0")/../../.."
-exec node --experimental-loader=./.pnp.loader.mjs "$@"
+NODE_OPTIONS="--no-warnings --require=\"$PWD/.pnp.cjs\" --experimental-loader=\"$PWD/.pnp.loader.mjs\"" exec node "$@"
