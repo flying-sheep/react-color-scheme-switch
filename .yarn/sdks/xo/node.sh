@@ -1,3 +1,4 @@
 #!/bin/bash
-cd "$(dirname -- "$0")/../../.."
-NODE_OPTIONS="--no-warnings --require=\"$PWD/.pnp.cjs\" --experimental-loader=\"$PWD/.pnp.loader.mjs\"" exec node "$@"
+pdir="$(realpath "$(dirname -- "$0")/../../..")"
+export NODE_OPTIONS="--no-warnings --require=\"$pdir/.pnp.cjs\" --experimental-loader=\"$pdir/.pnp.loader.mjs\""
+exec node "$@"
