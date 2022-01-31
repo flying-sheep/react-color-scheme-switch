@@ -11,7 +11,7 @@
 		".": "./dist/index.js",
 		"./*": "./dist/*.js"
 	},
-	"packageManager": "yarn@3.1.0",
+	"packageManager": "yarn@3.2.0-rc.13",
 	"dependencies": {
 		"react": "^17.0.2",
 		"react-spring": "^9.3.0"
@@ -35,6 +35,9 @@
 		"@react-spring/core": {
 			"built": false
 		}
+	},
+	"engines": {
+		"node": ">=17.4"
 	},
 	"scripts": {
 		"prepare": "husky install",
