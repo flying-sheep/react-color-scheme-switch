@@ -1,6 +1,6 @@
 import React from 'react'
 
-import {a, m} from './svg-path'
+import {a, m} from './svg-path.js'
 
 interface CrescentPathProps extends React.SVGProps<SVGPathElement> {
 	fullness?: number;
