@@ -3,6 +3,7 @@
 	"version": "1.0.0",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
+	"type": "module",
 	"files": [
 		"./src/",
 		"./dist/"
@@ -18,6 +19,8 @@
 		"react-dom": "^17.0.2"
 	},
 	"devDependencies": {
+		"@types/estree": "^0.0.50",
+		"@types/node": "^17.0.13",
 		"@types/react": "^17",
 		"@types/react-dom": "^17",
 		"@typescript-eslint/eslint-plugin": "^5.10.2",
@@ -32,6 +35,7 @@
 		"husky": "^7.0.4",
 		"tsc": "^2.0.4",
 		"typescript": "^4.5.5",
+		"xdm": "^3.3.4",
 		"xo": "^0.47.0"
 	},
 	"dependenciesMeta": {
@@ -44,7 +48,9 @@
 	},
 	"scripts": {
 		"prepare": "husky install",
-		"build": "tsc",
+		"build": "yarn build:js && yarn build:docs",
+		"build:js": "tsc",
+		"build:docs": "tsc -p tsconfig-scripts.json && node scripts/compile-docs.js",
 		"lint": "xo --fix"
 	}
 }
