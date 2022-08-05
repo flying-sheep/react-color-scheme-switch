@@ -46,7 +46,7 @@ const ThemeToggle: React.FC<ThemeToggleProps> = ({height = 50}) => {
 	return (
 		<svg
 			style={{width: `${2 * height}px`, height: `${height}px`}}
-			viewBox="0 0 1 1"
+			viewBox='0 0 1 1'
 			onClick={handleClick}
 		>
 			<path
@@ -57,14 +57,14 @@ const ThemeToggle: React.FC<ThemeToggleProps> = ({height = 50}) => {
           ${a(0, 1, 0.3, 0.3)}
           z
         `}
-				fill="dimgray"
+				fill='dimgray'
 			/>
 			<AnimatedMoonPath
 				fullness={fullness}
 				fill={color}
 				cx={x}
 				cy={0.5}
-				transform="scale(.8)"
+				transform='scale(.8)'
 			/>
 		</svg>
 	)
