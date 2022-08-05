@@ -4,20 +4,20 @@
   <script type="importmap">
   {
     "imports": {
-      "react": "https://esm.sh/v90/react@18.0.0/es2022/react.js",
-      "react/jsx-runtime": "https://esm.sh/v90/react@18.0.0/es2022/jsx-runtime.js",
-      "@react-spring/web": "https://esm.sh/v90/@react-spring/web@9.5.2/es2022/web.js",
-      "react-display-window/lib/components": "https://esm.sh/v90/react-display-window@2.1.2/es2022/lib/components.js",
+      "react": "https://esm.sh/react@18?bundle&dev",
+      "react/jsx-runtime": "https://esm.sh/react@18/jsx-runtime.js?bundle&dev",
+      "react-dom/client": "https://esm.sh/react-dom@18/client.js?bundle&dev",
+      "@react-spring/web": "https://esm.sh/@react-spring/web@9?bundle&dev",
       "react-color-scheme-switch": "../index.js"
     }
   }
   </script>
-  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
   <script type=module>
-    import MDXContent from "./index.js"
     import {jsx} from "react/jsx-runtime"
-    ReactDOM.render(jsx(MDXContent, {}), document.body)
+    import ReactDOM from "react-dom/client"
+    import MDXContent from "./index.js"
+    const root = ReactDOM.createRoot(document.body)
+    root.render(jsx(MDXContent, {}))
   </script>
 </head>
 <body>

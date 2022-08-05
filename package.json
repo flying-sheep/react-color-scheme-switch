@@ -54,7 +54,9 @@
 		"prepare": "husky install",
 		"build": "yarn build:js && yarn build:docs",
 		"build:js": "tsc",
-		"build:docs": "tsc -p tsconfig-scripts.json && node scripts/compile-docs.js",
+		"build:docs:builder": "tsc -p tsconfig-scripts.json",
+		"build:docs:only": "node scripts/compile-docs.js",
+		"build:docs": "yarn build:docs:builder && yarn build:docs:only",
 		"lint": "xo --fix"
 	}
 }
