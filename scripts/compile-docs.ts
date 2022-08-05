@@ -5,5 +5,6 @@ void main()
 
 async function main() {
 	const compiled = await compile(await fs.readFile('./src/index.mdx'))
-	console.log(String(compiled))
+	await fs.mkdir('./docs')
+	await fs.writeFile('./docs/index.js', String(compiled))
 }
