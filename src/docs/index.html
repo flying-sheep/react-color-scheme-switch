@@ -1,21 +1,23 @@
 <!doctype html>
 <head>
   <meta charset=utf-8>
-  <script async src="https://ga.jspm.io/npm:es-module-shims@1.5.12/dist/es-module-shims.js"></script>
   <script type="importmap">
   {
     "imports": {
-      "react-display-window": "../index.js",
-      "react/jsx-runtime": "https://unpkg.com/react@18/jsx-runtime.js"
+      "react": "https://esm.sh/v90/react@18.0.0/es2022/react.js",
+      "react/jsx-runtime": "https://esm.sh/v90/react@18.0.0/es2022/jsx-runtime.js",
+      "@react-spring/web": "https://esm.sh/v89/@react-spring/web@9.5.2/es2022/web.js",
+      "react-display-window/lib/components": "https://esm.sh/v90/react-display-window@2.1.2/es2022/lib/components.js",
+      "react-color-scheme-switch": "../index.js"
     }
   }
   </script>
   <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
   <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-  <script type=module src=index.js></script>
   <script type=module>
+    import MDXContent from "./index.js"
     import {jsx} from "react/jsx-runtime"
-    ReactDom.render(jsx(MDXContent, {}), document.body)
+    ReactDOM.render(jsx(MDXContent, {}), document.body)
   </script>
 </head>
 <body>
