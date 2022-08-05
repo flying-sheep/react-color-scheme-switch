@@ -13,6 +13,7 @@ module.exports = {
   semicolon: false,
   extends: [
     'xo-react',
+    'plugin:react/jsx-runtime',
   ],
   rules: {
     [NC]: nameRules,

@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import {useState} from 'react'
 
 import MoonPath from './crescent-path.js'
 import {m, l, a} from './svg-path.js'
@@ -30,7 +30,7 @@ interface ThemeToggleProps {
 	// Colors?: Record<State, string>
 }
 
-const ThemeToggle: React.FC<ThemeToggleProps> = ({height = 50}) => {
+export default function ThemeToggle({height = 50}: ThemeToggleProps): JSX.Element {
 	const [state, setState] = useState<State>('auto')
 	const {color, x, fullness} = useSpring(state2props[state])
 
@@ -46,28 +46,26 @@ const ThemeToggle: React.FC<ThemeToggleProps> = ({height = 50}) => {
 	return (
 		<svg
 			style={{width: `${2 * height}px`, height: `${height}px`}}
-			viewBox="0 0 1 1"
+			viewBox='0 0 1 1'
 			onClick={handleClick}
 		>
 			<path
 				d={`
-          ${m(1, 1)}
-          ${a(1, 0, 0.3, 0.3)}
-          ${l(0, 0)}
-          ${a(0, 1, 0.3, 0.3)}
-          z
-        `}
-				fill="dimgray"
+					${m(1, 1)}
+					${a(1, 0, 0.3, 0.3)}
+					${l(0, 0)}
+					${a(0, 1, 0.3, 0.3)}
+					z
+				`}
+				fill='dimgray'
 			/>
 			<AnimatedMoonPath
 				fullness={fullness}
 				fill={color}
 				cx={x}
 				cy={0.5}
-				transform="scale(.8)"
+				transform='scale(.8)'
 			/>
 		</svg>
 	)
 }
-
-export default ThemeToggle
