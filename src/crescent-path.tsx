@@ -15,8 +15,8 @@ export default function CrescentPath({
 	...props
 }: CrescentPathProps): JSX.Element {
 	const goToTop = m(0, 0.5)
-	const outer = a(0.5, 0.5, 0, -0.5, false)
-	const inner = a(fullness - 0.5, 0.5, 0, 0.5, fullness < 0.5)
+	const outer = a(0, -0.5, 0.5, 0.5, false)
+	const inner = a(0, 0.5, fullness - 0.5, 0.5, fullness < 0.5)
 	return (
 		<g transform={`translate(${cx} ${cy})`}>
 			<path d={`${goToTop}${outer}${inner}z`} fill={fill} {...props}/>
