@@ -8,13 +8,13 @@ interface CrescentPathProps extends React.SVGProps<SVGPathElement> {
 	cy?: number;
 }
 
-const CrescentPath: React.FC<CrescentPathProps> = ({
+export default function CrescentPath({
 	fullness = 1,
 	fill = 'white',
 	cx = 0,
 	cy = 0,
 	...props
-}) => {
+}: CrescentPathProps): JSX.Element {
 	const goToTop = m(0, 0.5)
 	const outer = a(0.5, 0.5, 0, -0.5, false)
 	const inner = a(fullness - 0.5, 0.5, 0, 0.5, fullness < 0.5)
@@ -24,5 +24,3 @@ const CrescentPath: React.FC<CrescentPathProps> = ({
 		</g>
 	)
 }
-
-export default CrescentPath
