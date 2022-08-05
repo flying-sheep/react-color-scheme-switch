@@ -51,12 +51,12 @@ export default function ThemeToggle({height = 50}: ThemeToggleProps): JSX.Elemen
 		>
 			<path
 				d={`
-          ${m(1, 1)}
-          ${a(1, 0, 0.3, 0.3)}
-          ${l(0, 0)}
-          ${a(0, 1, 0.3, 0.3)}
-          z
-        `}
+					${m(1, 1)}
+					${a(1, 0, 0.3, 0.3)}
+					${l(0, 0)}
+					${a(0, 1, 0.3, 0.3)}
+					z
+				`}
 				fill='dimgray'
 			/>
 			<AnimatedMoonPath
