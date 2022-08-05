@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import {useState} from 'react'
 
 import MoonPath from './crescent-path.js'
 import {m, l, a} from './svg-path.js'
