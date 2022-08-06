@@ -4,15 +4,18 @@ import {buildDepTree, LockfileType, PkgTree} from 'snyk-nodejs-lockfile-parser'
 import {IPackageJson} from 'package-json-type'
 import mustache from 'mustache'
 
-let manifest: IPackageJson | undefined
+let manifest: IPackageJson & {name: string} | undefined
 let lockfile: PkgTree | undefined
 
 void main()
 
-async function getManifest(): Promise<IPackageJson> {
+async function getManifest(): Promise<IPackageJson & {name: string}> {
 	if (!manifest) {
 		const f = await fs.readFile('./package.json', {encoding: 'utf8'})
-		manifest = JSON.parse(f) as IPackageJson
+		manifest = JSON.parse(f) as IPackageJson & {name: string}
+		if (!manifest.name) {
+			throw new Error('No name in package.json')
+		}
 	}
 
 	return manifest
@@ -43,9 +46,6 @@ async function importMapUrl(dep: string): Promise<string> {
 
 async function getImportMap(entrypoints: Record<string, string[]> = {}): Promise<Record<string, string>> {
 	const {dependencies = {}, name} = await getManifest()
-	if (!name) {
-		throw new Error('No name in package.json')
-	}
 
 	const importMap = Object.fromEntries(
 		await Promise.all(
@@ -60,7 +60,7 @@ async function getImportMap(entrypoints: Record<string, string[]> = {}): Promise
 
 	return {
 		...importMap,
-		[name]: '../index.js',
+		[name]: `./${name}/index.js`,
 	}
 }
 
@@ -71,14 +71,16 @@ async function renderHtml(templatePath: string, entrypoints: Record<string, stri
 }
 
 async function main() {
+	const manifest = await getManifest()
 	const compiled = await compile(await fs.readFile('./src/docs/index.mdx'))
-	await fs.mkdir('./dist/docs', {recursive: true})
+	await fs.mkdir('./docs', {recursive: true})
 	const entrypoints = {
 		react: ['jsx-runtime'],
 		'react-dom': ['client'],
 	}
 	await Promise.all([
-		fs.writeFile('./dist/docs/index.js', String(compiled)),
-		fs.writeFile('./dist/docs/index.html', await renderHtml('./src/docs/index.html.mustache', entrypoints)),
+		fs.cp('./dist', `./docs/${manifest.name}`, {recursive: true}),
+		fs.writeFile('./docs/index.js', String(compiled)),
+		fs.writeFile('./docs/index.html', await renderHtml('./src/docs/index.html.mustache', entrypoints)),
 	])
 }
