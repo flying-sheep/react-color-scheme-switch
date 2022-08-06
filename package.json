@@ -3,6 +3,7 @@
 	"version": "1.0.0",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
+	"type": "module",
 	"files": [
 		"./src/",
 		"./dist/"
@@ -18,8 +19,12 @@
 		"react-dom": "^18.2.0"
 	},
 	"devDependencies": {
+		"@types/estree": "^1.0.0",
+		"@types/mustache": "^4",
+		"@types/node": "^18.6.4",
 		"@types/react": "^18.0.15",
 		"@types/react-dom": "^18.0.6",
+		"@types/unist": "^2.0.6",
 		"@typescript-eslint/eslint-plugin": "^5.32.0",
 		"@typescript-eslint/parser": "^5.32.0",
 		"csstype": "^3.1.0",
@@ -30,9 +35,15 @@
 		"eslint-plugin-react": "^7.30.1",
 		"eslint-plugin-react-hooks": "^4.6.0",
 		"husky": "^8.0.1",
+		"mdast-util-to-hast": "^12.2.0",
+		"mustache": "^4.2.0",
+		"package-json-type": "^1.0.3",
+		"snyk-nodejs-lockfile-parser": "^1.41.0",
+		"source-map": "^0.7.4",
 		"tsc": "^2.0.4",
 		"typescript": "^4.7.4",
 		"webpack": "npm:ignoredep@>=1.11.0",
+		"xdm": "^3.4.0",
 		"xo": "^0.51.0"
 	},
 	"dependenciesMeta": {
@@ -45,7 +56,11 @@
 	},
 	"scripts": {
 		"prepare": "husky install",
-		"build": "tsc",
+		"build": "yarn build:js && yarn build:docs",
+		"build:js": "tsc",
+		"build:docs:builder": "tsc -p tsconfig-scripts.json",
+		"build:docs:only": "node scripts/compile-docs.js",
+		"build:docs": "yarn build:docs:builder && yarn build:docs:only",
 		"lint": "xo --fix"
 	}
 }
