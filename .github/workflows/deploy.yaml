@@ -1,0 +1,23 @@
+name: Build and Deploy
+on:
+  push:
+    branches: [main]
+permissions:
+  contents: write
+jobs:
+  build-and-deploy:
+    concurrency: ci-${{ github.ref }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node-version:
+          - "17.4" # necessary to load xo in the VS Code extension
+    steps:
+      - uses: actions/checkout@v3
+      - run: |
+          yarn install
+          yarn build
+      - uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: docs
