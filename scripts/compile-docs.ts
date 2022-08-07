@@ -52,7 +52,10 @@ async function getImportMap(entrypoints: Record<string, string[]> = {}): Promise
 		await Promise.all(
 			Object.entries(dependencies)
 				.flatMap(([dep, spec]) => {
-					if (spec.labels?.scope === 'dev' && !(dep in entrypoints)) return []
+					if (spec.labels?.scope === 'dev' && !(dep in entrypoints)) {
+						return []
+					}
+
 					return ([
 						[dep, importMapUrl(dep)] as const,
 						...(entrypoints[dep] ?? []).map(ep => ([`${dep}/${ep}`, importMapUrl(`${dep}/${ep}`)] as const)),
