@@ -455,7 +455,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/mustache@npm:^4":
+"@types/mustache@npm:^4.2.1":
   version: 4.2.1
   resolution: "@types/mustache@npm:4.2.1"
   checksum: 27e84f17a32f18ba1bc2fc08360a66687a9436233a6c1b48c6e8d6766644ebbeb2538b7f40edcc760dc0023a8f773cef0d60092870aeef86b1d1e744e4a99480
@@ -5612,7 +5612,7 @@ __metadata:
   dependencies:
     "@react-spring/web": ^9.5.2
     "@types/estree": ^1.0.0
-    "@types/mustache": ^4
+    "@types/mustache": ^4.2.1
     "@types/node": ^18.6.4
     "@types/react": ^18.0.15
     "@types/react-dom": ^18.0.6
