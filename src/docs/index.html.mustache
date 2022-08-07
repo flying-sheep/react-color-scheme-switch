@@ -1,6 +1,8 @@
 <!doctype html>
 <head>
   <meta charset=utf-8>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{name}}</title>
   <script src="https://ga.jspm.io/npm:es-module-shims@1.5.13/dist/es-module-shims.js"></script>
   <script type=importmap>
   {
@@ -14,10 +16,52 @@
     const root = ReactDOM.createRoot(document.querySelector('main'))
     root.render(jsx(MDXContent, {}))
   </script>
-  <link rel=stylesheet href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
-  <link rel=stylesheet href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
-  <link rel=stylesheet href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1/new.min.css">
   <style>
+    /*
+     * `initial` works like undefined variables, so `var(initial, x)` will resolve to `x`.
+     * A space means an empty value, so `var( , x) y` will resolve to `y`.
+     */
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --light: ;
+        --dark: initial;
+      }
+    }
+
+    @media (prefers-color-scheme: light) {
+      :root {
+        --dark: ;
+        --light: initial;
+      }
+    }
+
+    :root[data-colour-scheme="dark"] {
+      --light: ;
+      --dark: initial;
+    }
+
+    :root[data-colour-scheme="light"] {
+      --dark: ;
+      --light: initial;
+    }
+
+    /* Set master colours: https://github.com/xz/new.css/wiki/Customizing-Themes#legend */
+    @media (prefers-color-scheme: light) or (prefers-color-scheme: dark) {
+    :root {
+      /*--nc-font-sans: ...;*/
+	    /*--nc-font-mono: ...;*/
+      --nc-tx-1: var(--light, #333) var(--dark, #ccc);
+      --nc-tx-2: var(--nc-tx-1);
+      --nc-bg-1: var(--light, white) var(--dark, #011);
+      --nc-bg-2: var(--light, #ccc) var(--dark, #333);
+      --nc-bg-3: var(--nc-bg-2);
+      --nc-lk-1: var(--light, #069) var(--dark, #8bf);
+      --nc-lk-2: var(--light, #057) var(--dark, #acf);
+      --nc-lk-tx: var(--nc-lk-1);
+      --nc-ac-1: var(--light, #bfc) var(--dark, #041);
+      --nc-ac-tx: var(--nc-ac-1);
+    }
     body { display: flex; flex-direction: column; align-items: center; }
     main { max-width: 42em; padding: 2em 0; }
   </style>

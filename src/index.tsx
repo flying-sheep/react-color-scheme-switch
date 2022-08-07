@@ -18,36 +18,55 @@ const state2props = Object.fromEntries(
 	states.map(({name, ...props}, i) => [name, {x: i / 2, ...props}]),
 )
 
-function relativeCoords(event: React.MouseEvent) {
+function relativeCoords<T extends Element, E extends MouseEvent>(event: React.MouseEvent<T, E>) {
 	const bounds = event.currentTarget.getBoundingClientRect()
 	const x = event.clientX - bounds.left
 	const y = event.clientY - bounds.top
 	return {x, y, w: bounds.width, h: bounds.height}
 }
 
-interface ThemeToggleProps {
+interface ThemeToggleProps extends React.SVGAttributes<SVGSVGElement> {
 	height?: number;
+	setRoot?: boolean;
 	// Colors?: Record<State, string>
 }
 
-export default function ThemeToggle({height = 50}: ThemeToggleProps): JSX.Element {
+export default function ThemeToggle({
+	height = 50,
+	setRoot = false,
+	/// SVG
+	viewBox = '0 0 1 1',
+	style = {},
+	onClick,
+	...svgProps
+}: ThemeToggleProps): JSX.Element {
 	const [state, setState] = useState<State>('auto')
 	const {color, x, fullness} = useSpring(state2props[state])
 
-	const handleClick = (event: React.MouseEvent) => {
+	const handleClick = (event: React.MouseEvent<SVGSVGElement, MouseEvent>) => {
 		const {x, w} = relativeCoords(event)
 		const idx = Math.floor((x / w) * 3) // TODO: can clicking the last pixel make this go OOB?
 		const clickedState = states[idx].name
 		// To make the middle state more discoverable,
 		// make it always switch to sth. when at the extrema.
 		setState(clickedState === state ? states[1].name : clickedState)
+		if (setRoot) {
+			if (clickedState === 'auto') {
+				delete document.documentElement.dataset.colourScheme
+			} else {
+				document.documentElement.dataset.colourScheme = clickedState
+			}
+		}
+
+		onClick?.(event)
 	}
 
 	return (
 		<svg
-			style={{width: `${2 * height}px`, height: `${height}px`}}
-			viewBox='0 0 1 1'
+			style={{width: `${2 * height}px`, height: `${height}px`, ...style}}
+			viewBox={viewBox}
 			onClick={handleClick}
+			{...svgProps}
 		>
 			<path
 				d={`

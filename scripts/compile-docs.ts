@@ -71,9 +71,13 @@ async function getImportMap(entrypoints: Record<string, string[]> = {}): Promise
 	}
 }
 
-async function renderHtml(templatePath: string, entrypoints: Record<string, string[]> = {}) {
+async function renderHtml(
+	templatePath: string,
+	entrypoints: Record<string, string[]> = {},
+	vars: Record<string, any> = {},
+) {
 	const imports = await getImportMap(entrypoints)
-	const view = {imports: JSON.stringify(imports, undefined, 2)}
+	const view = {imports: JSON.stringify(imports, undefined, 2), ...vars}
 	return mustache.render(await fs.readFile(templatePath, {encoding: 'utf8'}), view)
 }
 
@@ -85,9 +89,12 @@ async function main() {
 		react: ['jsx-runtime'],
 		'react-dom': ['client'],
 	}
+	const vars = {
+		name: manifest.name,
+	}
 	await Promise.all([
 		fs.cp('./dist', `./docs/${manifest.name}`, {recursive: true}),
 		fs.writeFile('./docs/index.js', String(compiled)),
-		fs.writeFile('./docs/index.html', await renderHtml('./src/docs/index.html.mustache', entrypoints)),
+		fs.writeFile('./docs/index.html', await renderHtml('./src/docs/index.html.mustache', entrypoints, vars)),
 	])
 }
