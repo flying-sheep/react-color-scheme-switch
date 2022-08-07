@@ -32,6 +32,7 @@ interface ThemeToggleProps extends React.SVGAttributes<SVGSVGElement> {
 
 export default function ThemeToggle({
 	height = 50,
+	/// SVG
 	viewBox = '0 0 1 1',
 	style = {},
 	onClick,
