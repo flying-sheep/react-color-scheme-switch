@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import {SVGAttributes, useState} from 'react'
 
 import MoonPath from './crescent-path.js'
 import {m, l, a} from './svg-path.js'
@@ -25,29 +25,37 @@ function relativeCoords(event: React.MouseEvent) {
 	return {x, y, w: bounds.width, h: bounds.height}
 }
 
-interface ThemeToggleProps {
+interface ThemeToggleProps extends SVGAttributes<SVGSVGElement> {
 	height?: number;
 	// Colors?: Record<State, string>
 }
 
-export default function ThemeToggle({height = 50}: ThemeToggleProps): JSX.Element {
+export default function ThemeToggle({
+	height = 50,
+	viewBox = '0 0 1 1',
+	style = {},
+	onClick,
+	...svgProps
+}: ThemeToggleProps): JSX.Element {
 	const [state, setState] = useState<State>('auto')
 	const {color, x, fullness} = useSpring(state2props[state])
 
-	const handleClick = (event: React.MouseEvent) => {
+	const handleClick = (event: React.MouseEvent<SVGSVGElement, MouseEvent>) => {
 		const {x, w} = relativeCoords(event)
 		const idx = Math.floor((x / w) * 3) // TODO: can clicking the last pixel make this go OOB?
 		const clickedState = states[idx].name
 		// To make the middle state more discoverable,
 		// make it always switch to sth. when at the extrema.
 		setState(clickedState === state ? states[1].name : clickedState)
+		onClick?.(event)
 	}
 
 	return (
 		<svg
-			style={{width: `${2 * height}px`, height: `${height}px`}}
-			viewBox='0 0 1 1'
+			style={{width: `${2 * height}px`, height: `${height}px`, ...style}}
+			viewBox={viewBox}
 			onClick={handleClick}
+			{...svgProps}
 		>
 			<path
 				d={`
