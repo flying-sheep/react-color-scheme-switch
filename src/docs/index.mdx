@@ -3,9 +3,19 @@ import ThemeToggle from "react-color-scheme-switch";
 # ThemeToggle
 
 The central component of `react-color-scheme-switch`.
+Most basically (without attached behavior),
+it just looks like this:
 
-## Example
-
-The most basic usage (without attached behavior) is:
+<pre>&lt;ThemeToggle /></pre>
 
 <ThemeToggle />
+
+Click on it to see its three positions.
+They represent (from left to right):
+day/light mode, auto mode, and night/dark mode.
+
+Specify `setRoot` to make it set `<html data-colour-scheme="dark|light"/>`):
+
+<pre>&lt;ThemeToggle setRoot /></pre>
+
+<ThemeToggle setRoot />

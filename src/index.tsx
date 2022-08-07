@@ -27,11 +27,13 @@ function relativeCoords<T extends Element, E extends MouseEvent>(event: React.Mo
 
 interface ThemeToggleProps extends React.SVGAttributes<SVGSVGElement> {
 	height?: number;
+	setRoot?: boolean;
 	// Colors?: Record<State, string>
 }
 
 export default function ThemeToggle({
 	height = 50,
+	setRoot = false,
 	/// SVG
 	viewBox = '0 0 1 1',
 	style = {},
@@ -48,6 +50,14 @@ export default function ThemeToggle({
 		// To make the middle state more discoverable,
 		// make it always switch to sth. when at the extrema.
 		setState(clickedState === state ? states[1].name : clickedState)
+		if (setRoot) {
+			if (clickedState === 'auto') {
+				delete document.documentElement.dataset.colourScheme
+			} else {
+				document.documentElement.dataset.colourScheme = clickedState
+			}
+		}
+
 		onClick?.(event)
 	}
 
