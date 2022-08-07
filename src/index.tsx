@@ -1,4 +1,4 @@
-import {SVGAttributes, useState} from 'react'
+import {useState} from 'react'
 
 import MoonPath from './crescent-path.js'
 import {m, l, a} from './svg-path.js'
@@ -18,14 +18,14 @@ const state2props = Object.fromEntries(
 	states.map(({name, ...props}, i) => [name, {x: i / 2, ...props}]),
 )
 
-function relativeCoords(event: React.MouseEvent) {
+function relativeCoords<T extends Element, E extends MouseEvent>(event: React.MouseEvent<T, E>) {
 	const bounds = event.currentTarget.getBoundingClientRect()
 	const x = event.clientX - bounds.left
 	const y = event.clientY - bounds.top
 	return {x, y, w: bounds.width, h: bounds.height}
 }
 
-interface ThemeToggleProps extends SVGAttributes<SVGSVGElement> {
+interface ThemeToggleProps extends React.SVGAttributes<SVGSVGElement> {
 	height?: number;
 	// Colors?: Record<State, string>
 }
