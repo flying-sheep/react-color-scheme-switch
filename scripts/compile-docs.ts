@@ -25,7 +25,7 @@ async function getLockfile(): Promise<PkgTree> {
 	if (!lockfile) {
 		const manifestContents = JSON.stringify(await getManifest())
 		const lockFileContents = await fs.readFile('./yarn.lock', {encoding: 'utf8'})
-		lockfile = await buildDepTree(manifestContents, lockFileContents, false, LockfileType.yarn2)
+		lockfile = await buildDepTree(manifestContents, lockFileContents, true, LockfileType.yarn2)
 	}
 
 	return lockfile
@@ -45,15 +45,19 @@ async function importMapUrl(dep: string): Promise<string> {
 }
 
 async function getImportMap(entrypoints: Record<string, string[]> = {}): Promise<Record<string, string>> {
-	const {dependencies = {}, name} = await getManifest()
+	const {name} = await getManifest()
+	const {dependencies} = await getLockfile()
 
 	const importMap = Object.fromEntries(
 		await Promise.all(
-			Object.keys(dependencies)
-				.flatMap(dep => ([
-					[dep, importMapUrl(dep)] as const,
-					...(entrypoints[dep] ?? []).map(ep => ([`${dep}/${ep}`, importMapUrl(`${dep}/${ep}`)] as const)),
-				]))
+			Object.entries(dependencies)
+				.flatMap(([dep, spec]) => {
+					if (spec.labels?.scope === 'dev' && !(dep in entrypoints)) return []
+					return ([
+						[dep, importMapUrl(dep)] as const,
+						...(entrypoints[dep] ?? []).map(ep => ([`${dep}/${ep}`, importMapUrl(`${dep}/${ep}`)] as const)),
+					])
+				})
 				.map(async ([k, vp]) => ([k, await vp] as const)),
 		),
 	)
