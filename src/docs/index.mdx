@@ -6,7 +6,9 @@ The central component of `react-color-scheme-switch`.
 Most basically (without attached behavior),
 it just looks like this:
 
-<pre>&lt;ThemeToggle /></pre>
+```js
+<ThemeToggle />
+```
 
 <ThemeToggle />
 
@@ -14,8 +16,19 @@ Click on it to see its three positions.
 They represent (from left to right):
 day/light mode, auto mode, and night/dark mode.
 
-Specify `setRoot` to make it set `<html data-colour-scheme="dark|light"/>`):
+The `onClick` event handler receives the state `'dark' | 'light' | 'auto'`.
+As an example, this page’s CSS reacts to `<html data-colour-scheme="dark|light"/>`:
 
-<pre>&lt;ThemeToggle setRoot /></pre>
+```js
+<ThemeToggle
+  onClick={(evt, state) => {
+    document.documentElement.dataset.colourScheme = state;
+  }}
+/>
+```
 
-<ThemeToggle setRoot />
+<ThemeToggle
+  onClick={(evt, state) => {
+    document.documentElement.dataset.colourScheme = state;
+  }}
+/>

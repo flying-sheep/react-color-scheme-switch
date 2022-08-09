@@ -19,16 +19,14 @@ const state2props = Object.fromEntries(
 )
 
 interface ThemeToggleProps extends Omit<React.SVGAttributes<SVGSVGElement>, 'viewBox' | 'onClick'> {
-	setRoot?: boolean | string;
 	// Colors?: Record<State, string>
 	onClick?: (event: React.MouseEvent<SVGSVGElement, MouseEvent>, state: State) => void;
 }
 
 const ThemeToggle = forwardRef<SVGSVGElement, ThemeToggleProps>(({
-	setRoot = false,
+	onClick,
 	/// SVG
 	style = {height: '50px'},
-	onClick,
 	...svgProps
 }, ref) => {
 	const [state, setState] = useState<State>('auto')
@@ -41,12 +39,8 @@ const ThemeToggle = forwardRef<SVGSVGElement, ThemeToggleProps>(({
 		// To make the middle state more discoverable,
 		// make it always switch to sth. when at the extrema.
 		setState(clickedState === state ? states[1].name : clickedState)
-		if (setRoot) {
-			doSetRoot(setRoot, clickedState)
-		}
-
 		onClick?.(event, clickedState)
-	}, [onClick, setRoot, state])
+	}, [onClick, state])
 
 	return (
 		<svg
@@ -96,18 +90,3 @@ function deriveDims(style: CSSProperties): CSSProperties {
 
 	return {height, width, ...rest}
 }
-
-function doSetRoot(setRoot: string | true, clickedState: string) {
-	const key = setRoot === true ? 'colourScheme' : setRoot
-	if (!/[a-zA-Z]+/.test(key)) {
-		throw new Error(`setRoot needs to be a JavaScript identifier or boolean, not ${key}`)
-	}
-
-	if (clickedState === 'auto') {
-		// eslint-disable-next-line @typescript-eslint/no-dynamic-delete
-		delete document.documentElement.dataset[key]
-	} else {
-		document.documentElement.dataset[key] = clickedState
-	}
-}
-
