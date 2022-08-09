@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import {CSSProperties, forwardRef, useCallback, useState} from 'react'
 
 import MoonPath from './crescent-path.js'
 import {m, l, a} from './svg-path.js'
@@ -18,32 +18,23 @@ const state2props = Object.fromEntries(
 	states.map(({name, ...props}, i) => [name, {x: i / 2, ...props}]),
 )
 
-function relativeCoords<T extends Element, E extends MouseEvent>(event: React.MouseEvent<T, E>) {
-	const bounds = event.currentTarget.getBoundingClientRect()
-	const x = event.clientX - bounds.left
-	const y = event.clientY - bounds.top
-	return {x, y, w: bounds.width, h: bounds.height}
-}
-
-interface ThemeToggleProps extends React.SVGAttributes<SVGSVGElement> {
-	height?: number;
-	setRoot?: boolean;
+interface ThemeToggleProps extends Omit<React.SVGAttributes<SVGSVGElement>, 'viewBox' | 'onClick'> {
+	setRoot?: boolean | string;
 	// Colors?: Record<State, string>
+	onClick?: (event: React.MouseEvent<SVGSVGElement, MouseEvent>, state: State) => void;
 }
 
-export default function ThemeToggle({
-	height = 50,
+const ThemeToggle = forwardRef<SVGSVGElement, ThemeToggleProps>(({
 	setRoot = false,
 	/// SVG
-	viewBox = '0 0 1 1',
-	style = {},
+	style = {height: '50px'},
 	onClick,
 	...svgProps
-}: ThemeToggleProps): JSX.Element {
+}, ref) => {
 	const [state, setState] = useState<State>('auto')
 	const {color, x, fullness} = useSpring(state2props[state])
 
-	const handleClick = (event: React.MouseEvent<SVGSVGElement, MouseEvent>) => {
+	const handleClick = useCallback((event: React.MouseEvent<SVGSVGElement, MouseEvent>) => {
 		const {x, w} = relativeCoords(event)
 		const idx = Math.floor((x / w) * 3) // TODO: can clicking the last pixel make this go OOB?
 		const clickedState = states[idx].name
@@ -51,22 +42,19 @@ export default function ThemeToggle({
 		// make it always switch to sth. when at the extrema.
 		setState(clickedState === state ? states[1].name : clickedState)
 		if (setRoot) {
-			if (clickedState === 'auto') {
-				delete document.documentElement.dataset.colourScheme
-			} else {
-				document.documentElement.dataset.colourScheme = clickedState
-			}
+			doSetRoot(setRoot, clickedState)
 		}
 
-		onClick?.(event)
-	}
+		onClick?.(event, clickedState)
+	}, [onClick, setRoot, state])
 
 	return (
 		<svg
-			style={{width: `${2 * height}px`, height: `${height}px`, ...style}}
-			viewBox={viewBox}
+			style={deriveDims(style)}
+			viewBox='0 0 1 1'
 			onClick={handleClick}
 			{...svgProps}
+			ref={ref}
 		>
 			<path
 				d={`
@@ -87,4 +75,39 @@ export default function ThemeToggle({
 			/>
 		</svg>
 	)
+})
+
+export default ThemeToggle
+
+function relativeCoords<T extends Element, E extends MouseEvent>(event: React.MouseEvent<T, E>) {
+	const bounds = event.currentTarget.getBoundingClientRect()
+	const x = event.clientX - bounds.left
+	const y = event.clientY - bounds.top
+	return {x, y, w: bounds.width, h: bounds.height}
 }
+
+function deriveDims(style: CSSProperties): CSSProperties {
+	let {height, width, ...rest} = style
+	if (height !== undefined && width === undefined) {
+		width = `calc(${height} * 2)`
+	} else if (height === undefined && width !== undefined) {
+		height = `calc(${width} / 2)`
+	}
+
+	return {height, width, ...rest}
+}
+
+function doSetRoot(setRoot: string | true, clickedState: string) {
+	const key = setRoot === true ? 'colourScheme' : setRoot
+	if (!/[a-zA-Z]+/.test(key)) {
+		throw new Error(`setRoot needs to be a JavaScript identifier or boolean, not ${key}`)
+	}
+
+	if (clickedState === 'auto') {
+		// eslint-disable-next-line @typescript-eslint/no-dynamic-delete
+		delete document.documentElement.dataset[key]
+	} else {
+		document.documentElement.dataset[key] = clickedState
+	}
+}
+
