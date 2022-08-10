@@ -5636,7 +5636,6 @@ __metadata:
     source-map: ^0.7.4
     tsc: ^2.0.4
     typescript: ^4.7.4
-    webpack: "npm:ignoredep@>=1.11.0"
     xdm: ^3.4.0
     xo: ^0.51.0
   dependenciesMeta:
@@ -6870,13 +6869,6 @@ __metadata:
   version: 3.2.1
   resolution: "web-streams-polyfill@npm:3.2.1"
   checksum: b119c78574b6d65935e35098c2afdcd752b84268e18746606af149e3c424e15621b6f1ff0b42b2676dc012fc4f0d313f964b41a4b5031e525faa03997457da02
-  languageName: node
-  linkType: hard
-
-"webpack@npm:ignoredep@>=1.11.0":
-  version: 25.9999.0
-  resolution: "ignoredep@npm:25.9999.0"
-  checksum: e0e2b544e45bcbd1d3e9a6d2d70f897a3a755c85c7bf2821ca6cc3b2d7552f4bd4662c8d34567576834b47392e5ffe25afbd9cbf3e3206a9a0c719944514db56
   languageName: node
   linkType: hard
 
