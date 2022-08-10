@@ -3,6 +3,7 @@ import {compile} from 'xdm'
 import {buildDepTree, LockfileType, PkgTree} from 'snyk-nodejs-lockfile-parser'
 import {IPackageJson} from 'package-json-type'
 import mustache from 'mustache'
+import prism from 'remark-prism'
 
 let manifest: IPackageJson & {name: string} | undefined
 let lockfile: PkgTree | undefined
@@ -81,9 +82,11 @@ async function renderHtml(
 	return mustache.render(await fs.readFile(templatePath, {encoding: 'utf8'}), view)
 }
 
+const remarkPlugins = [prism]
+
 async function main() {
 	const manifest = await getManifest()
-	const compiled = await compile(await fs.readFile('./src/docs/index.mdx'))
+	const compiled = await compile(await fs.readFile('./src/docs/index.mdx'), {remarkPlugins})
 	await fs.mkdir('./docs', {recursive: true})
 	const entrypoints = {
 		react: ['jsx-runtime'],

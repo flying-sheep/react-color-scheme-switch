@@ -16,7 +16,8 @@
     const root = ReactDOM.createRoot(document.querySelector('main'))
     root.render(jsx(MDXContent, {}))
   </script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1/new.min.css">
+  <link rel=stylesheet href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1/new.min.css">
+  <link rel=stylesheet href="https://esm.sh/prism-themes@1.9.0/themes/prism-synthwave84.css">
   <style>
     /*
      * `initial` works like undefined variables, so `var(initial, x)` will resolve to `x`.
@@ -51,19 +52,17 @@
     :root {
       /*--nc-font-sans: ...;*/
 	    /*--nc-font-mono: ...;*/
-      --nc-tx-1: var(--light, #333) var(--dark, #ccc);
-      --nc-tx-2: var(--nc-tx-1);
-      --nc-bg-1: var(--light, white) var(--dark, #011);
-      --nc-bg-2: var(--light, #ccc) var(--dark, #333);
-      --nc-bg-3: var(--nc-bg-2);
-      --nc-lk-1: var(--light, #069) var(--dark, #8bf);
-      --nc-lk-2: var(--light, #057) var(--dark, #acf);
-      --nc-lk-tx: var(--nc-lk-1);
-      --nc-ac-1: var(--light, #bfc) var(--dark, #041);
-      --nc-ac-tx: var(--nc-ac-1);
+      --nc-tx-1: var(--light, #000000) var(--dark, #FFFFFF);
+      --nc-tx-2: var(--light, #1A1A1A) var(--dark, #EEEEEE);
+      --nc-bg-1: var(--light, #FFFFFF) var(--dark, #000000);
+      --nc-bg-2: var(--light, #F6F8FA) var(--dark, #111111);
+      --nc-bg-3: var(--light, #E5E7EB) var(--dark, #222222);
+      --nc-lk-1: var(--light, #0070F3) var(--dark, #3291FF);
+      --nc-lk-2: var(--light, #0366D6) var(--dark, #0070F3);
+      --nc-lk-tx: var(--light, #FFFFFF) var(--dark, #FFFFFF);
+      --nc-ac-1: var(--light, #79FFE1) var(--dark, #7928CA);
+      --nc-ac-tx: var(--light, #0C4047) var(--dark, #FFFFFF);
     }
-    body { display: flex; flex-direction: column; align-items: center; }
-    main { max-width: 42em; padding: 2em 0; }
   </style>
 </head>
 <body>

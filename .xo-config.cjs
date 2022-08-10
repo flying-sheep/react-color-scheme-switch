@@ -17,5 +17,6 @@ module.exports = {
   ],
   rules: {
     [NC]: nameRules,
+    'react/require-default-props': 'off',
   }
 }
