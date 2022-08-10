@@ -10,7 +10,7 @@ The central component of `react-color-scheme-switch`.
 Most basically (without attached behavior),
 it just looks like this:
 
-```js
+```jsx
 <ThemeToggle />
 ```
 
@@ -23,7 +23,7 @@ day/light mode, auto mode, and night/dark mode.
 The `onClick` event handler receives the state `'dark' | 'light' | 'auto'`.
 As an example, this page’s CSS reacts to `<html data-colour-scheme="dark|light"/>`:
 
-```js
+```jsx
 <ThemeToggle
   onClick={(evt, state) => {
     document.documentElement.dataset.colourScheme = state;
