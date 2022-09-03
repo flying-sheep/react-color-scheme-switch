@@ -28,8 +28,8 @@ const staticLinks = [
 const template = ({attributes, files: {js = [], css = []}, meta, publicPath, title}: RollupHtmlTemplateOptions) => {
 	const scripts = js.map(({fileName}) => `<script src="${publicPath}${fileName}"${makeHtmlAttributes(attributes.script)}></script>`)
 	const links = [
-		...css.map(({fileName}) => `${publicPath}${fileName}`),
 		...staticLinks,
+		...css.map(({fileName}) => `${publicPath}${fileName}`),
 	].map(l => `<link href="${l}" rel="stylesheet"${makeHtmlAttributes(attributes.link)}>`)
 	const metas = meta.map(input => `<meta${makeHtmlAttributes(input)}>`)
 	return `\
@@ -89,6 +89,9 @@ const conf: RollupOptions[] = [
 				title: 'react-color-scheme',
 				fileName: 'index.html',
 				meta: [
+					{charset: 'utf8'},
+					{name: 'color-scheme', content: 'dark light'},
+					{name: 'viewport', content: 'minimum-scale=1, initial-scale=1, width=device-width'},
 				],
 				publicPath: '/',
 				template: template as RollupHtmlOptions['template'], // See https://github.com/rollup/plugins/pull/1254
