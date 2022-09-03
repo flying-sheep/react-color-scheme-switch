@@ -1,0 +1,46 @@
+
+/*
+ * `initial` works like undefined variables, so `var(initial, x)` will resolve to `x`.
+ * A space means an empty value, so `var( , x) y` will resolve to `y`.
+ */
+@media (prefers-color-scheme: dark) {
+	:root {
+		--light: ;
+		--dark: initial;
+	}
+}
+
+@media (prefers-color-scheme: light) {
+	:root {
+		--dark: ;
+		--light: initial;
+	}
+}
+
+:root[data-color-scheme="dark"] {
+	--light: ;
+	--dark: initial;
+}
+
+:root[data-color-scheme="light"] {
+	--dark: ;
+	--light: initial;
+}
+
+/* Set master colors: https://github.com/xz/new.css/wiki/Customizing-Themes#legend */
+@media (prefers-color-scheme: light) or (prefers-color-scheme: dark) {
+	:root {
+		/*--nc-font-sans: ...;*/
+		/*--nc-font-mono: ...;*/
+		--nc-tx-1: var(--light, #000000) var(--dark, #FFFFFF);
+		--nc-tx-2: var(--light, #1A1A1A) var(--dark, #EEEEEE);
+		--nc-bg-1: var(--light, #FFFFFF) var(--dark, #000000);
+		--nc-bg-2: var(--light, #F6F8FA) var(--dark, #111111);
+		--nc-bg-3: var(--light, #E5E7EB) var(--dark, #222222);
+		--nc-lk-1: var(--light, #0070F3) var(--dark, #3291FF);
+		--nc-lk-2: var(--light, #0366D6) var(--dark, #0070F3);
+		--nc-lk-tx: var(--light, #FFFFFF) var(--dark, #FFFFFF);
+		--nc-ac-1: var(--light, #79FFE1) var(--dark, #7928CA);
+		--nc-ac-tx: var(--light, #0C4047) var(--dark, #FFFFFF);
+	}
+}
