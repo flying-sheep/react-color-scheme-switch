@@ -18,5 +18,6 @@ module.exports = {
   rules: {
     [NC]: nameRules,
     'react/require-default-props': 'off',
+    'import/order': ['error', {alphabetize: {order:'desc'}}]
   }
 }

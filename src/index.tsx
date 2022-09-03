@@ -1,7 +1,7 @@
 import {CSSProperties, forwardRef, useCallback, useState} from 'react'
 
-import MoonPath from './crescent-path.js'
 import {m, l, a} from './svg-path.js'
+import MoonPath from './crescent-path.js'
 import {useSpring, animated} from '@react-spring/web'
 
 const AnimatedMoonPath = animated(MoonPath)

@@ -8,6 +8,6 @@
     "strict": true,
     "sourceMap": true,
     "allowSyntheticDefaultImports": true
-  },
+	},
   "include": ["src/**/*", "rollup.config.ts"]
 }
