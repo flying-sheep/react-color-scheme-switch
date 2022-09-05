@@ -20,6 +20,7 @@ function getNodeEnv(): 'production' | 'development' {
 
 const isDev = getNodeEnv() === 'development'
 const isWatching = process.env.ROLLUP_WATCH === 'true'
+const publicPath = process.env.URL_PREFIX ?? '/'
 
 const staticLinks = [
 	'https://cdn.jsdelivr.net/npm/@exampledev/new.css@1/new.min.css',
@@ -95,7 +96,7 @@ const conf: RollupOptions[] = [
 					{name: 'color-scheme', content: 'dark light'},
 					{name: 'viewport', content: 'minimum-scale=1, initial-scale=1, width=device-width'},
 				],
-				publicPath: '/',
+				publicPath,
 				template: template as RollupHtmlOptions['template'], // See https://github.com/rollup/plugins/pull/1254
 			}),
 			...(isDev && isWatching) ? [

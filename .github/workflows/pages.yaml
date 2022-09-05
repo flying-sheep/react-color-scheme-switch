@@ -27,11 +27,12 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
-      - run: |
-          yarn install
-          yarn build
+      - run: yarn install
+      - run: yarn build
+        env:
+          URL_PREFIX: ${{ steps.deployment.outputs.page_url }}
       - uses: actions/upload-pages-artifact@v1
         with:
-          path: 'docs'
+          path: docs
       - id: deployment
         uses: actions/deploy-pages@main
