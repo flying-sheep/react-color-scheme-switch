@@ -29,8 +29,6 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: yarn install
       - run: yarn build
-        env:
-          URL_PREFIX: ${{ steps.deployment.outputs.page_url }}
       - uses: actions/upload-pages-artifact@v1
         with:
           path: docs
