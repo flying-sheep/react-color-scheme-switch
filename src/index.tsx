@@ -38,8 +38,9 @@ const ThemeToggle = forwardRef<SVGSVGElement, ThemeToggleProps>(({
 		const clickedState = states[idx].name
 		// To make the middle state more discoverable,
 		// make it always switch to sth. when at the extrema.
-		setState(clickedState === state ? states[1].name : clickedState)
-		onClick?.(event, clickedState)
+		const newState = clickedState === state ? states[1].name : clickedState
+		setState(newState)
+		onClick?.(event, newState)
 	}, [onClick, state])
 
 	return (
