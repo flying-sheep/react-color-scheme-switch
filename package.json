@@ -19,8 +19,13 @@
 		"react-dom": "^18.2.0"
 	},
 	"devDependencies": {
+		"@mdx-js/rollup": "^2.1.2",
+		"@rollup/plugin-commonjs": "^22.0.2",
+		"@rollup/plugin-html": "^0.2.4",
+		"@rollup/plugin-node-resolve": "^13.3.0",
+		"@rollup/plugin-replace": "^4.0.0",
+		"@rollup/plugin-typescript": "^8.3.4",
 		"@types/estree": "^1.0.0",
-		"@types/mustache": "^4.2.1",
 		"@types/node": "^18.6.4",
 		"@types/react": "^18.0.15",
 		"@types/react-dom": "^18.0.6",
@@ -37,12 +42,16 @@
 		"eslint-plugin-react-hooks": "^4.6.0",
 		"husky": "^8.0.1",
 		"mdast-util-to-hast": "^12.2.0",
-		"mustache": "^4.2.0",
 		"package-json-type": "^1.0.3",
+		"postcss": "^8.4.16",
 		"remark-prism": "^1.3.6",
+		"rollup": "^3.0.0-5",
+		"rollup-plugin-postcss": "^4.0.2",
+		"rollup-plugin-serve": "^2.0.1",
 		"snyk-nodejs-lockfile-parser": "^1.41.0",
 		"source-map": "^0.7.4",
 		"tsc": "^2.0.4",
+		"tslib": "^2.4.0",
 		"typescript": "^4.7.4",
 		"xdm": "^3.4.0",
 		"xo": "^0.51.0"
@@ -57,11 +66,7 @@
 	},
 	"scripts": {
 		"prepare": "husky install",
-		"build": "yarn build:js && yarn build:docs",
-		"build:js": "tsc",
-		"build:docs:builder": "tsc -p tsconfig-scripts.json",
-		"build:docs:only": "node scripts/compile-docs.js",
-		"build:docs": "yarn build:docs:builder && yarn build:docs:only",
+		"build": "rollup --configPlugin=typescript --config=rollup.config.ts",
 		"lint": "xo --fix"
 	}
 }

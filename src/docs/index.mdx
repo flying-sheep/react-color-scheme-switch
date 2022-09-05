@@ -1,4 +1,4 @@
-import ThemeToggle from "react-color-scheme-switch";
+import ThemeToggle from "../index.js";
 
 <header>
   <h1>React Color Scheme Switch</h1>
@@ -26,13 +26,13 @@ As an example, this page’s CSS reacts to `<html data-colour-scheme="dark|light
 ```jsx
 <ThemeToggle
   onClick={(evt, state) => {
-    document.documentElement.dataset.colourScheme = state;
+    document.documentElement.dataset.colorScheme = state;
   }}
 />
 ```
 
 <ThemeToggle
   onClick={(evt, state) => {
-    document.documentElement.dataset.colourScheme = state;
+    document.documentElement.dataset.colorScheme = state;
   }}
 />
