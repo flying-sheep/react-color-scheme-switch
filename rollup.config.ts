@@ -1,11 +1,11 @@
 import process from 'node:process'
 import serve from 'rollup-plugin-serve'
 import {RollupOptions} from 'rollup'
+import {rollupPluginHTML as html} from '@web/rollup-plugin-html'
 import postcss from 'rollup-plugin-postcss'
 import typescript from '@rollup/plugin-typescript'
 import replace from '@rollup/plugin-replace'
 import {nodeResolve} from '@rollup/plugin-node-resolve'
-import html, {makeHtmlAttributes, RollupHtmlOptions, RollupHtmlTemplateOptions} from '@rollup/plugin-html'
 import commonjs from '@rollup/plugin-commonjs'
 import mdx from '@mdx-js/rollup'
 
@@ -20,34 +20,6 @@ function getNodeEnv(): 'production' | 'development' {
 
 const isDev = getNodeEnv() === 'development'
 const isWatching = process.env.ROLLUP_WATCH === 'true'
-const publicPath = process.env.URL_PREFIX ?? '/'
-
-const staticLinks = [
-	'https://cdn.jsdelivr.net/npm/@exampledev/new.css@1/new.min.css',
-	'https://esm.sh/prism-themes@1.9.0/themes/prism-synthwave84.css',
-]
-
-const template = ({attributes, files: {js = [], css = []}, meta, publicPath, title}: RollupHtmlTemplateOptions) => {
-	const scripts = js.map(({fileName}) => `<script src="${publicPath}${fileName}"${makeHtmlAttributes(attributes.script)}></script>`)
-	const links = [
-		...staticLinks,
-		...css.map(({fileName}) => `${publicPath}${fileName}`),
-	].map(l => `<link href="${l}" rel="stylesheet"${makeHtmlAttributes(attributes.link)}>`)
-	const metas = meta.map(input => `<meta${makeHtmlAttributes(input)}>`)
-	return `\
-<!doctype html>
-<html${makeHtmlAttributes(attributes.html)}>
-<head>
-	${metas.join('\n')}
-	<title>${title}</title>
-	${links.join('\n')}
-	${scripts.join('\n')}
-</head>
-<body>
-	<main></main>
-</body>
-</html>`
-}
 
 const watch = {
 	include: ['src/**'],
@@ -68,9 +40,9 @@ const conf: RollupOptions[] = [
 		],
 	},
 	{
-		input: 'src/docs/index.tsx',
+		input: 'src/docs/index.html',
 		output: {
-			file: 'docs/index.js',
+			dir: 'docs',
 			format: 'module',
 			sourcemap: true,
 		},
@@ -79,8 +51,6 @@ const conf: RollupOptions[] = [
 			replace({
 				// eslint-disable-next-line @typescript-eslint/naming-convention
 				'process.env.NODE_ENV': JSON.stringify(getNodeEnv()),
-				// eslint-disable-next-line @typescript-eslint/naming-convention
-				'process.env.MUI_SUPPRESS_DEPRECATION_WARNINGS': JSON.stringify(false),
 				preventAssignment: true,
 			}),
 			postcss({extract: true}),
@@ -88,17 +58,7 @@ const conf: RollupOptions[] = [
 			mdx(),
 			nodeResolve(),
 			commonjs(),
-			html({
-				title: 'react-color-scheme',
-				fileName: 'index.html',
-				meta: [
-					{charset: 'utf8'},
-					{name: 'color-scheme', content: 'dark light'},
-					{name: 'viewport', content: 'minimum-scale=1, initial-scale=1, width=device-width'},
-				],
-				publicPath,
-				template: template as RollupHtmlOptions['template'], // See https://github.com/rollup/plugins/pull/1254
-			}),
+			html(),
 			...(isDev && isWatching) ? [
 				serve({
 					contentBase: './docs',
