@@ -1,6 +1,7 @@
 import process from 'node:process'
 import serve from 'rollup-plugin-serve'
 import {RollupOptions} from 'rollup'
+import postcss from 'rollup-plugin-postcss'
 import typescript from '@rollup/plugin-typescript'
 import replace from '@rollup/plugin-replace'
 import {nodeResolve} from '@rollup/plugin-node-resolve'
@@ -81,6 +82,7 @@ const conf: RollupOptions[] = [
 				'process.env.MUI_SUPPRESS_DEPRECATION_WARNINGS': JSON.stringify(false),
 				preventAssignment: true,
 			}),
+			postcss({extract: true}),
 			typescript(),
 			mdx(),
 			nodeResolve(),
