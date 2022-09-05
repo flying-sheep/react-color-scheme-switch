@@ -1,6 +1,11 @@
 {
 	"name": "react-color-scheme-switch",
-	"version": "1.0.1",
+	"version": "1.0.2",
+	"keywords": [
+		"react",
+		"typescript"
+	],
+	"license": "GPL-3.0",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
 	"type": "module",
@@ -14,8 +19,11 @@
 	},
 	"packageManager": "yarn@3.2.2",
 	"dependencies": {
-		"@react-spring/web": "^9.5.2",
-		"react": "^18.2.0"
+		"@react-spring/web": "^9.5.2"
+	},
+	"peerDependencies": {
+		"react": ">=18.2.0",
+		"react-dom": ">=18.2.0"
 	},
 	"devDependencies": {
 		"@mdx-js/rollup": "^2.1.2",
@@ -23,16 +31,13 @@
 		"@rollup/plugin-node-resolve": "^13.3.0",
 		"@rollup/plugin-replace": "^4.0.0",
 		"@rollup/plugin-typescript": "^8.3.4",
-		"@types/estree": "^1.0.0",
 		"@types/node": "^18.6.4",
 		"@types/react": "^18.0.15",
 		"@types/react-dom": "^18.0.6",
 		"@types/remark-prism": "^1.3.3",
-		"@types/unist": "^2.0.6",
 		"@typescript-eslint/eslint-plugin": "^5.32.0",
 		"@typescript-eslint/parser": "^5.32.0",
 		"@web/rollup-plugin-html": "^1.11.0",
-		"csstype": "^3.1.0",
 		"eslint": "^8.21.0",
 		"eslint-config-xo-react": "^0.27.0",
 		"eslint-config-xo-typescript": "^0.52.0",
@@ -40,20 +45,15 @@
 		"eslint-plugin-react": "^7.30.1",
 		"eslint-plugin-react-hooks": "^4.6.0",
 		"husky": "^8.0.1",
-		"mdast-util-to-hast": "^12.2.0",
-		"package-json-type": "^1.0.3",
 		"postcss": "^8.4.16",
+		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
 		"remark-prism": "^1.3.6",
 		"rollup": "^3.0.0-5",
 		"rollup-plugin-postcss": "^4.0.2",
 		"rollup-plugin-serve": "^2.0.1",
-		"snyk-nodejs-lockfile-parser": "^1.41.0",
-		"source-map": "^0.7.4",
-		"tsc": "^2.0.4",
 		"tslib": "^2.4.0",
 		"typescript": "^4.7.4",
-		"xdm": "^3.4.0",
 		"xo": "^0.51.0"
 	},
 	"dependenciesMeta": {
