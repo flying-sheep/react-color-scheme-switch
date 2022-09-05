@@ -36,7 +36,7 @@ const conf: RollupOptions[] = [
 		watch,
 		external: ['react', 'react/jsx-runtime', '@react-spring/web'],
 		plugins: [
-			typescript(),
+			typescript({declaration: true, outDir: 'dist', rootDir: 'src'}),
 		],
 	},
 	{
