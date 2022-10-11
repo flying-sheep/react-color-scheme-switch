@@ -1,6 +1,7 @@
 import process from 'node:process'
 import serve from 'rollup-plugin-serve'
 import {RollupOptions} from 'rollup'
+import remarkPrism from 'remark-prism'
 import {rollupPluginHTML as html} from '@web/rollup-plugin-html'
 import postcss from 'rollup-plugin-postcss'
 import typescript from '@rollup/plugin-typescript'
@@ -55,7 +56,7 @@ const conf: RollupOptions[] = [
 			}),
 			postcss({extract: true}),
 			typescript(),
-			mdx(),
+			mdx({remarkPlugins: [remarkPrism]}),
 			nodeResolve(),
 			commonjs(),
 			html(),
