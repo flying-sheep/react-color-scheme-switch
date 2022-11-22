@@ -8,6 +8,7 @@
 	],
 	"license": "GPL-3.0",
 	"homepage": "https://flying-sheep.github.io/react-color-scheme-switch/",
+	"repository": "github:flying-sheep/react-color-scheme-switch",
 	"bugs": "https://github.com/flying-sheep/react-color-scheme-switch/issues",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
