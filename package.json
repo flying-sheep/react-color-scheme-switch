@@ -70,6 +70,9 @@
 	"scripts": {
 		"prepare": "husky install",
 		"build": "rollup --configPlugin=typescript --config=rollup.config.ts",
+		"watch": "yarn build -w",
+		"serve": "npx serve -s docs",
+		"start": "npx concurrently 'npm:watch' 'npm:serve'",
 		"lint": "xo --fix",
 		"prepack": "yarn build"
 	}

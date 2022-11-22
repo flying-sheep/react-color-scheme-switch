@@ -45,6 +45,14 @@
 	}
 }
 
+.github-corner svg {
+	fill: var(--nc-tx-2);
+	color: var(--nc-bg-2);
+	position: absolute;
+	top: 0;
+	border: 0;
+	right: 0;
+}
 .github-corner:hover .octo-arm {
 	animation: octocat-wave 560ms ease-in-out;
 }
