@@ -70,6 +70,7 @@
 	"scripts": {
 		"prepare": "husky install",
 		"build": "rollup --configPlugin=typescript --config=rollup.config.ts",
-		"lint": "xo --fix"
+		"lint": "xo --fix",
+		"prepack": "yarn build"
 	}
 }
