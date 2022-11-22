@@ -1,11 +1,14 @@
 {
 	"name": "react-color-scheme-switch",
+	"description": "Tri state toggle to switch between light, dark, and automatic mode ☀️🌓🌒",
 	"version": "1.0.2",
 	"keywords": [
 		"react",
 		"typescript"
 	],
 	"license": "GPL-3.0",
+	"homepage": "https://flying-sheep.github.io/react-color-scheme-switch/",
+	"bugs": "https://github.com/flying-sheep/react-color-scheme-switch/issues",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
 	"type": "module",
