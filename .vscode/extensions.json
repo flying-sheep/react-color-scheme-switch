@@ -1,7 +1,6 @@
 {
   "recommendations": [
     "samverschueren.linter-xo",
-    "arcanis.vscode-zipfs",
-    "dbaeumer.vscode-eslint"
+    "arcanis.vscode-zipfs"
   ]
 }
