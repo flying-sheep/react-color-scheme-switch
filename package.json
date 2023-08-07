@@ -44,7 +44,7 @@
 		"@web/rollup-plugin-html": "^2.0.0",
 		"eslint": "^8.21.0",
 		"eslint-config-xo-react": "^0.27.0",
-		"eslint-config-xo-typescript": "^0.52.0",
+		"eslint-config-xo-typescript": "^0.54.1",
 		"eslint-import-resolver-node": "^0.3.6",
 		"eslint-plugin-react": "^7.30.1",
 		"eslint-plugin-react-hooks": "^4.6.0",
