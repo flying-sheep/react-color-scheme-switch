@@ -352,20 +352,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rollup/plugin-typescript@npm:^8.3.4":
-  version: 8.3.4
-  resolution: "@rollup/plugin-typescript@npm:8.3.4"
+"@rollup/plugin-typescript@npm:^11.1.2":
+  version: 11.1.2
+  resolution: "@rollup/plugin-typescript@npm:11.1.2"
   dependencies:
-    "@rollup/pluginutils": ^3.1.0
-    resolve: ^1.17.0
+    "@rollup/pluginutils": ^5.0.1
+    resolve: ^1.22.1
   peerDependencies:
-    rollup: ^2.14.0
+    rollup: ^2.14.0||^3.0.0
     tslib: "*"
     typescript: ">=3.7.0"
   peerDependenciesMeta:
+    rollup:
+      optional: true
     tslib:
       optional: true
-  checksum: 3a86664a1c8a00d715bd61fb3b2d739e1a3eb8c7a8e695a2ac9846e0d93872e8db0aa5695f952635bdbea8f1a5c79bdb643ce0d0eaa244e6cbfadce3f50ab8d9
+  checksum: f4655a35e08639574e86dbce578b76468ee8627e4a3d8a46b7e0703d5d98c39a9bda9aa7144510aae11c5d8ce9c3b065e7f3e52dd31fbc6780015dd7802e01f7
   languageName: node
   linkType: hard
 
@@ -6423,7 +6425,7 @@ __metadata:
     "@rollup/plugin-commonjs": ^22.0.2
     "@rollup/plugin-node-resolve": ^15.1.0
     "@rollup/plugin-replace": ^4.0.0
-    "@rollup/plugin-typescript": ^8.3.4
+    "@rollup/plugin-typescript": ^11.1.2
     "@types/node": ^20.4.5
     "@types/react": ^18.0.15
     "@types/react-dom": ^18.0.6
