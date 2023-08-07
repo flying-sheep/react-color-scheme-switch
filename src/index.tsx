@@ -1,4 +1,4 @@
-import {CSSProperties, forwardRef, useCallback, useState} from 'react'
+import {type CSSProperties, forwardRef, useCallback, useState} from 'react'
 
 import {m, l, a} from './svg-path.js'
 import MoonPath from './crescent-path.js'
@@ -18,10 +18,10 @@ const state2props = Object.fromEntries(
 	states.map(({name, ...props}, i) => [name, {x: i / 2, ...props}]),
 )
 
-interface ThemeToggleProps extends Omit<React.SVGAttributes<SVGSVGElement>, 'viewBox' | 'onClick'> {
+type ThemeToggleProps = {
 	// Colors?: Record<State, string>
-	onClick?: (event: React.MouseEvent<SVGSVGElement, MouseEvent>, state: State) => void;
-}
+	onClick?: (event: React.MouseEvent<SVGSVGElement>, state: State) => void;
+} & Omit<React.SVGAttributes<SVGSVGElement>, 'viewBox' | 'onClick'>
 
 const ThemeToggle = forwardRef<SVGSVGElement, ThemeToggleProps>(({
 	onClick,
@@ -32,7 +32,7 @@ const ThemeToggle = forwardRef<SVGSVGElement, ThemeToggleProps>(({
 	const [state, setState] = useState<State>('auto')
 	const {color, x, fullness} = useSpring(state2props[state])
 
-	const handleClick = useCallback((event: React.MouseEvent<SVGSVGElement, MouseEvent>) => {
+	const handleClick = useCallback((event: React.MouseEvent<SVGSVGElement>) => {
 		const {x, w} = relativeCoords(event)
 		const idx = Math.floor((x / w) * 3) // TODO: can clicking the last pixel make this go OOB?
 		const clickedState = states[idx].name
