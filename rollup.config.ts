@@ -1,6 +1,6 @@
 import process from 'node:process'
 import serve from 'rollup-plugin-serve'
-import {RollupOptions} from 'rollup'
+import {type RollupOptions} from 'rollup'
 import remarkPrism from 'remark-prism'
 import {rollupPluginHTML as html} from '@web/rollup-plugin-html'
 import postcss from 'rollup-plugin-postcss'
