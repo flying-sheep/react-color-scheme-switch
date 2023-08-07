@@ -5,7 +5,7 @@
 	"xo.enable": true,
 	"xo.format.enable": true,
 	"xo.trace.server": "verbose",
-	"xo.runtime": "./.yarn/sdks/xo/node.sh",
+	"xo.runtime": "./.yarn/node.sh",
 	"[typescript]": {
 		"editor.defaultFormatter": "samverschueren.linter-xo"
 	},
