@@ -2622,19 +2622,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-config-xo-typescript@npm:^0.54.1":
-  version: 0.54.1
-  resolution: "eslint-config-xo-typescript@npm:0.54.1"
-  peerDependencies:
-    "@typescript-eslint/eslint-plugin": ">=5.31.0"
-    "@typescript-eslint/parser": ">=5.31.0"
-    eslint: ">=8.0.0"
-    typescript: ">=4.4"
-  checksum: ae87dc27a0bf5addec09c555d11c6d3fd9a10fb8641a0c2c4489d09e61b27ff99c23ff2265f1ebd21b45a1091b1541894c1704036c14bf84b50287f09782742b
-  languageName: node
-  linkType: hard
-
-"eslint-config-xo-typescript@npm:^1.0.0":
+"eslint-config-xo-typescript@npm:^1.0.0, eslint-config-xo-typescript@npm:^1.0.1":
   version: 1.0.1
   resolution: "eslint-config-xo-typescript@npm:1.0.1"
   peerDependencies:
@@ -6789,7 +6777,7 @@ __metadata:
     "@yarnpkg/sdks": ^3.0.0-rc.48
     eslint: ^8.21.0
     eslint-config-xo-react: ^0.27.0
-    eslint-config-xo-typescript: ^0.54.1
+    eslint-config-xo-typescript: ^1.0.1
     eslint-import-resolver-node: ^0.3.6
     eslint-plugin-react: ^7.30.1
     eslint-plugin-react-hooks: ^4.6.0
