@@ -33,7 +33,7 @@
 		"@mdx-js/rollup": "^2.1.2",
 		"@rollup/plugin-commonjs": "^25.0.4",
 		"@rollup/plugin-node-resolve": "^15.1.0",
-		"@rollup/plugin-replace": "^4.0.0",
+		"@rollup/plugin-replace": "^5.0.2",
 		"@rollup/plugin-typescript": "^11.1.2",
 		"@types/node": "^20.4.5",
 		"@types/react": "^18.0.15",
