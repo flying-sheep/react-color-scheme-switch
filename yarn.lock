@@ -942,14 +942,14 @@ __metadata:
   linkType: hard
 
 "@web/rollup-plugin-html@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "@web/rollup-plugin-html@npm:2.0.0"
+  version: 2.0.1
+  resolution: "@web/rollup-plugin-html@npm:2.0.1"
   dependencies:
     "@web/parse5-utils": ^2.0.0
     glob: ^7.1.6
     html-minifier-terser: ^7.1.0
     parse5: ^6.0.1
-  checksum: d80af295d5d23478a161ff0bf751b2b9a36a7687b967ba54c01d0e6dcf3ec0ed821736abac44b70da2c72719ecbe1a12079ae2e86cb28910155a97a75e7cc16b
+  checksum: 770923ff74d94a6e561c83596c6bed344ae1339e91440a2b2955b9ca5c198acdd44ad7850ff07b12112e076025a640660de7bf70766761428416fdc371cde488
   languageName: node
   linkType: hard
 
