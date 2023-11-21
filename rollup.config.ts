@@ -1,4 +1,5 @@
 import process from 'node:process'
+import {type Pluggable} from 'unified'
 import serve from 'rollup-plugin-serve'
 import {type RollupOptions} from 'rollup'
 import remarkPrism from 'remark-prism'
@@ -56,7 +57,8 @@ const conf: RollupOptions[] = [
 			}),
 			postcss({extract: true}),
 			typescript(),
-			mdx({remarkPlugins: [remarkPrism]}),
+			// https://github.com/sergioramos/remark-prism/issues/304
+			mdx({remarkPlugins: [remarkPrism as Pluggable]}),
 			nodeResolve(),
 			commonjs(),
 			html(),
