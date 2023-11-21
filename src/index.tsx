@@ -20,7 +20,7 @@ const state2props = Object.fromEntries(
 
 type ThemeToggleProps = {
 	// Colors?: Record<State, string>
-	onClick?: (event: React.MouseEvent<SVGSVGElement>, state: State) => void;
+	readonly onClick?: (event: React.MouseEvent<SVGSVGElement>, state: State) => void;
 } & Omit<React.SVGAttributes<SVGSVGElement>, 'viewBox' | 'onClick'>
 
 const ThemeToggle = forwardRef<SVGSVGElement, ThemeToggleProps>(({
