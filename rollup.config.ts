@@ -38,7 +38,7 @@ const conf: RollupOptions[] = [
 		watch,
 		external: ['react', 'react/jsx-runtime', '@react-spring/web'],
 		plugins: [
-			typescript({declaration: true, outDir: 'dist', rootDir: 'src'}),
+			typescript({declaration: true, outDir: 'dist', rootDir: 'src', sourceMap: true}),
 		],
 	},
 	{
@@ -56,7 +56,7 @@ const conf: RollupOptions[] = [
 				preventAssignment: true,
 			}),
 			postcss({extract: true}),
-			typescript(),
+			typescript({sourceMap: true}),
 			// https://github.com/sergioramos/remark-prism/issues/304
 			mdx({remarkPlugins: [remarkPrism as Pluggable]}),
 			nodeResolve(),

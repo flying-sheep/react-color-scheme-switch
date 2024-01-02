@@ -20,7 +20,7 @@ jobs:
     strategy:
       matrix:
         node-version:
-          - "17.4" # necessary to load xo in the VS Code extension
+          - "20"
     steps:
       - uses: actions/checkout@v3
       - uses: actions/configure-pages@v1
