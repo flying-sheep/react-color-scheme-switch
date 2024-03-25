@@ -60,7 +60,7 @@
 		"tslib": "^2.4.0",
 		"typescript": "^5.4.3",
 		"unified": "^11.0.4",
-		"xo": "^0.57.0"
+		"xo": "^0.58.0"
 	},
 	"dependenciesMeta": {
 		"@react-spring/core": {
