@@ -43,7 +43,7 @@
 		"@typescript-eslint/parser": "^7.0.1",
 		"@web/rollup-plugin-html": "^2.1.2",
 		"@yarnpkg/sdks": "^3.0.0-rc.48",
-		"eslint": "^8.21.0",
+		"eslint": "^9.0.0",
 		"eslint-config-xo-react": "^0.27.0",
 		"eslint-config-xo-typescript": "^4.0.0",
 		"eslint-import-resolver-node": "^0.3.6",
