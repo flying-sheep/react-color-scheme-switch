@@ -1003,14 +1003,16 @@ __metadata:
   linkType: hard
 
 "@web/rollup-plugin-html@npm:^2.1.2":
-  version: 2.1.2
-  resolution: "@web/rollup-plugin-html@npm:2.1.2"
+  version: 2.3.0
+  resolution: "@web/rollup-plugin-html@npm:2.3.0"
   dependencies:
     "@web/parse5-utils": "npm:^2.1.0"
     glob: "npm:^10.0.0"
     html-minifier-terser: "npm:^7.1.0"
+    lightningcss: "npm:^1.24.0"
     parse5: "npm:^6.0.1"
-  checksum: 10/2bed3f75d0e353a55d89ccbcf320b515b1435e5e537157d5013fde4a3650855997778a533ca07a9d6dfc1bd734fdb31cace443efabf71720c466b2fdb06dbd68
+    picomatch: "npm:^2.2.2"
+  checksum: 10/9cfa4e79e67051247b21847cc017e710a1de8b0d5eea4e628ebe9dd4795cae2135d71755ae17bd8cca4c5391e629258d545eb59a4067fe95732c17e34dbc4081
   languageName: node
   linkType: hard
 
@@ -2313,6 +2315,15 @@ __metadata:
   version: 2.0.2
   resolution: "dequal@npm:2.0.2"
   checksum: 10/5509bc2a0a0c99e8eea453ada8da5d10a52bde1717fa18fa4406db2139c852ee7c8778cceb03241fe8f66350c55bd235f0ffa8d9d8bf58569c8bc38474a8a85c
+  languageName: node
+  linkType: hard
+
+"detect-libc@npm:^1.0.3":
+  version: 1.0.3
+  resolution: "detect-libc@npm:1.0.3"
+  bin:
+    detect-libc: ./bin/detect-libc.js
+  checksum: 10/3849fe7720feb153e4ac9407086956e073f1ce1704488290ef0ca8aab9430a8d48c8a9f8351889e7cdc64e5b1128589501e4fef48f3a4a49ba92cd6d112d0757
   languageName: node
   linkType: hard
 
@@ -4914,6 +4925,106 @@ __metadata:
   languageName: node
   linkType: hard
 
+"lightningcss-darwin-arm64@npm:1.24.1":
+  version: 1.24.1
+  resolution: "lightningcss-darwin-arm64@npm:1.24.1"
+  conditions: os=darwin & cpu=arm64
+  languageName: node
+  linkType: hard
+
+"lightningcss-darwin-x64@npm:1.24.1":
+  version: 1.24.1
+  resolution: "lightningcss-darwin-x64@npm:1.24.1"
+  conditions: os=darwin & cpu=x64
+  languageName: node
+  linkType: hard
+
+"lightningcss-freebsd-x64@npm:1.24.1":
+  version: 1.24.1
+  resolution: "lightningcss-freebsd-x64@npm:1.24.1"
+  conditions: os=freebsd & cpu=x64
+  languageName: node
+  linkType: hard
+
+"lightningcss-linux-arm-gnueabihf@npm:1.24.1":
+  version: 1.24.1
+  resolution: "lightningcss-linux-arm-gnueabihf@npm:1.24.1"
+  conditions: os=linux & cpu=arm
+  languageName: node
+  linkType: hard
+
+"lightningcss-linux-arm64-gnu@npm:1.24.1":
+  version: 1.24.1
+  resolution: "lightningcss-linux-arm64-gnu@npm:1.24.1"
+  conditions: os=linux & cpu=arm64 & libc=glibc
+  languageName: node
+  linkType: hard
+
+"lightningcss-linux-arm64-musl@npm:1.24.1":
+  version: 1.24.1
+  resolution: "lightningcss-linux-arm64-musl@npm:1.24.1"
+  conditions: os=linux & cpu=arm64 & libc=musl
+  languageName: node
+  linkType: hard
+
+"lightningcss-linux-x64-gnu@npm:1.24.1":
+  version: 1.24.1
+  resolution: "lightningcss-linux-x64-gnu@npm:1.24.1"
+  conditions: os=linux & cpu=x64 & libc=glibc
+  languageName: node
+  linkType: hard
+
+"lightningcss-linux-x64-musl@npm:1.24.1":
+  version: 1.24.1
+  resolution: "lightningcss-linux-x64-musl@npm:1.24.1"
+  conditions: os=linux & cpu=x64 & libc=musl
+  languageName: node
+  linkType: hard
+
+"lightningcss-win32-x64-msvc@npm:1.24.1":
+  version: 1.24.1
+  resolution: "lightningcss-win32-x64-msvc@npm:1.24.1"
+  conditions: os=win32 & cpu=x64
+  languageName: node
+  linkType: hard
+
+"lightningcss@npm:^1.24.0":
+  version: 1.24.1
+  resolution: "lightningcss@npm:1.24.1"
+  dependencies:
+    detect-libc: "npm:^1.0.3"
+    lightningcss-darwin-arm64: "npm:1.24.1"
+    lightningcss-darwin-x64: "npm:1.24.1"
+    lightningcss-freebsd-x64: "npm:1.24.1"
+    lightningcss-linux-arm-gnueabihf: "npm:1.24.1"
+    lightningcss-linux-arm64-gnu: "npm:1.24.1"
+    lightningcss-linux-arm64-musl: "npm:1.24.1"
+    lightningcss-linux-x64-gnu: "npm:1.24.1"
+    lightningcss-linux-x64-musl: "npm:1.24.1"
+    lightningcss-win32-x64-msvc: "npm:1.24.1"
+  dependenciesMeta:
+    lightningcss-darwin-arm64:
+      optional: true
+    lightningcss-darwin-x64:
+      optional: true
+    lightningcss-freebsd-x64:
+      optional: true
+    lightningcss-linux-arm-gnueabihf:
+      optional: true
+    lightningcss-linux-arm64-gnu:
+      optional: true
+    lightningcss-linux-arm64-musl:
+      optional: true
+    lightningcss-linux-x64-gnu:
+      optional: true
+    lightningcss-linux-x64-musl:
+      optional: true
+    lightningcss-win32-x64-msvc:
+      optional: true
+  checksum: 10/20e0ba29ef24f706448431e045f7f1f6cc6dce8e010b318c1214dc6884d164d776ad0082c3ece20c0cd3b82541a9787dd144be54004e3ae9d14a6cdd63ef04a2
+  languageName: node
+  linkType: hard
+
 "lilconfig@npm:^2.0.3, lilconfig@npm:^2.0.5":
   version: 2.0.6
   resolution: "lilconfig@npm:2.0.6"
@@ -6689,7 +6800,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"picomatch@npm:^2.3.1":
+"picomatch@npm:^2.2.2, picomatch@npm:^2.3.1":
   version: 2.3.1
   resolution: "picomatch@npm:2.3.1"
   checksum: 10/60c2595003b05e4535394d1da94850f5372c9427ca4413b71210f437f7b2ca091dbd611c45e8b37d10036fa8eade25c1b8951654f9d3973bfa66a2ff4d3b08bc
