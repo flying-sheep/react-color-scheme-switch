@@ -20,14 +20,14 @@ function getNodeEnv(): 'production' | 'development' {
 	return env
 }
 
-const isDev = getNodeEnv() === 'development'
+const isDevelopment = getNodeEnv() === 'development'
 const isWatching = process.env.ROLLUP_WATCH === 'true'
 
 const watch = {
 	include: ['src/**'],
 }
 
-const conf: RollupOptions[] = [
+const config: RollupOptions[] = [
 	{
 		input: 'src/index.tsx',
 		output: {
@@ -38,7 +38,9 @@ const conf: RollupOptions[] = [
 		watch,
 		external: ['react', 'react/jsx-runtime', '@react-spring/web'],
 		plugins: [
-			typescript({declaration: true, outDir: 'dist', rootDir: 'src', sourceMap: true}),
+			typescript({
+				declaration: true, outDir: 'dist', rootDir: 'src', sourceMap: true,
+			}),
 		],
 	},
 	{
@@ -62,7 +64,7 @@ const conf: RollupOptions[] = [
 			nodeResolve(),
 			commonjs(),
 			html(),
-			...(isDev && isWatching) ? [
+			...(isDevelopment && isWatching) ? [
 				serve({
 					contentBase: './docs',
 					historyApiFallback: true,
@@ -72,4 +74,4 @@ const conf: RollupOptions[] = [
 	},
 ]
 
-export default conf
+export default config
