@@ -1,7 +1,7 @@
 import {type SVGProps} from 'react'
 import {a, m} from './svg-path.js'
 
-type CrescentPathProps = {
+type CrescentPathProperties = {
 	readonly fullness?: number;
 	readonly cx?: number;
 	readonly cy?: number;
@@ -12,14 +12,14 @@ export default function CrescentPath({
 	fill = 'white',
 	cx = 0,
 	cy = 0,
-	...props
-}: CrescentPathProps): JSX.Element {
+	...properties
+}: CrescentPathProperties): JSX.Element {
 	const goToTop = m(0, 0.5)
 	const outer = a(0, -0.5, 0.5, 0.5, false)
 	const inner = a(0, 0.5, fullness - 0.5, 0.5, fullness < 0.5)
 	return (
 		<g transform={`translate(${cx} ${cy})`}>
-			<path d={`${goToTop}${outer}${inner}z`} fill={fill} {...props}/>
+			<path d={`${goToTop}${outer}${inner}z`} fill={fill} {...properties}/>
 		</g>
 	)
 }
