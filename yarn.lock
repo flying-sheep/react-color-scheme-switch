@@ -350,61 +350,69 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-spring/animated@npm:~9.7.3":
-  version: 9.7.3
-  resolution: "@react-spring/animated@npm:9.7.3"
+"@react-spring/animated@npm:~9.7.4":
+  version: 9.7.4
+  resolution: "@react-spring/animated@npm:9.7.4"
   dependencies:
-    "@react-spring/shared": "npm:~9.7.3"
-    "@react-spring/types": "npm:~9.7.3"
+    "@react-spring/shared": "npm:~9.7.4"
+    "@react-spring/types": "npm:~9.7.4"
   peerDependencies:
     react: ^16.8.0 || ^17.0.0 || ^18.0.0
-  checksum: 10/75c427e810b05ef508ac81695e3410619bcc8b8b87e232eb6fa05a91155bb6a558b324937fcaacb9b2002fdffb557de97ee5f6f6b226c53f5f356f62559f89a1
+  checksum: 10/b7f5f598686bd16765c78c1fc3d2b421d1a79cf6fa65b04b8bb0913630634c135e0d617915dcc8834a0874b63d24f3bc640d1a14741e9b1ed2825456978afd2f
   languageName: node
   linkType: hard
 
-"@react-spring/core@npm:~9.7.3":
-  version: 9.7.3
-  resolution: "@react-spring/core@npm:9.7.3"
+"@react-spring/core@npm:~9.7.4":
+  version: 9.7.4
+  resolution: "@react-spring/core@npm:9.7.4"
   dependencies:
-    "@react-spring/animated": "npm:~9.7.3"
-    "@react-spring/shared": "npm:~9.7.3"
-    "@react-spring/types": "npm:~9.7.3"
+    "@react-spring/animated": "npm:~9.7.4"
+    "@react-spring/shared": "npm:~9.7.4"
+    "@react-spring/types": "npm:~9.7.4"
   peerDependencies:
     react: ^16.8.0 || ^17.0.0 || ^18.0.0
-  checksum: 10/91102271531eae8fc146b8847ae6dbc03ebfbab5816529b9bfdd71e6d922ea07361fcbc57b404de57dac2f719246876f94539c04e2f314b3c767ad33d8d4f984
+  checksum: 10/1f30907e94a128c01ff38c807c9bbca2fb61562864279efb29ceef6e6b288722555a3050c9d9e1fa31e1d707619e24de19cda7f44de38da40a63c8fdec7e0fa5
   languageName: node
   linkType: hard
 
-"@react-spring/shared@npm:~9.7.3":
-  version: 9.7.3
-  resolution: "@react-spring/shared@npm:9.7.3"
-  dependencies:
-    "@react-spring/types": "npm:~9.7.3"
-  peerDependencies:
-    react: ^16.8.0 || ^17.0.0 || ^18.0.0
-  checksum: 10/76e44fe8ad63c83861a8453e26d085c69a40f0e5865ca2af7d2fecacb030e59ebe6db5f8e7ef8b1a6b6e193cc3c1c6fd3d5172b10bf216b205844e6d3e90e860
+"@react-spring/rafz@npm:~9.7.4":
+  version: 9.7.4
+  resolution: "@react-spring/rafz@npm:9.7.4"
+  checksum: 10/57a36e6d6bb4743214de70c8a36924e0753bd48a4c320a9cd47d4fb5f7591e88e3ac4ad635e38c9733a449fe97e51aa88fb1acbe39b5b931a06c8c448fa30930
   languageName: node
   linkType: hard
 
-"@react-spring/types@npm:~9.7.3":
-  version: 9.7.3
-  resolution: "@react-spring/types@npm:9.7.3"
-  checksum: 10/fcaf5fe02ae3e56a07f340dd5a0a17e9c283ff7deab8b6549ff513ef2f5ad57e0218d448b5331e422cfa739b40f0de3511e7b3f3e73ae8690496cda5bb984854
+"@react-spring/shared@npm:~9.7.4":
+  version: 9.7.4
+  resolution: "@react-spring/shared@npm:9.7.4"
+  dependencies:
+    "@react-spring/rafz": "npm:~9.7.4"
+    "@react-spring/types": "npm:~9.7.4"
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0
+  checksum: 10/c011371e8437905234e27c0811f06064021ed8f59424018835c507dec07ff22c770ab2674302743e30542ad4d8788fa1b81b9b40e094fc3ccd434323e6140907
+  languageName: node
+  linkType: hard
+
+"@react-spring/types@npm:~9.7.4":
+  version: 9.7.4
+  resolution: "@react-spring/types@npm:9.7.4"
+  checksum: 10/25a9a6816a3e0ab4e06f2ac66b68bfd9e2bf844c6ea30133711be85c11693a4e2b74f0ce3c60356848d9096530a748cbe84e556fa342b92ce320f4d8a21e208c
   languageName: node
   linkType: hard
 
 "@react-spring/web@npm:^9.5.2":
-  version: 9.7.3
-  resolution: "@react-spring/web@npm:9.7.3"
+  version: 9.7.4
+  resolution: "@react-spring/web@npm:9.7.4"
   dependencies:
-    "@react-spring/animated": "npm:~9.7.3"
-    "@react-spring/core": "npm:~9.7.3"
-    "@react-spring/shared": "npm:~9.7.3"
-    "@react-spring/types": "npm:~9.7.3"
+    "@react-spring/animated": "npm:~9.7.4"
+    "@react-spring/core": "npm:~9.7.4"
+    "@react-spring/shared": "npm:~9.7.4"
+    "@react-spring/types": "npm:~9.7.4"
   peerDependencies:
     react: ^16.8.0 || ^17.0.0 || ^18.0.0
     react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
-  checksum: 10/65c71e28ef1197d2afdc053d776b6bd1db6b5558d50849d78c7fc665c3ed1bbd08850fabfceba2223f8660915301aaea18588ebee2429e7b6de99a2640335bbe
+  checksum: 10/1813c87d92b8d8500cf5e302d2b051aaaa79f25438f79ba4cd8d2ddb17c1667566c88fbff05a5d589f16d0ba74660de1b684de4c6402fdd2f679edace6c7050c
   languageName: node
   linkType: hard
 
