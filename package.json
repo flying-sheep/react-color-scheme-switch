@@ -21,7 +21,7 @@
 		".": "./dist/index.js",
 		"./*": "./dist/*.js"
 	},
-	"packageManager": "yarn@4.3.1",
+	"packageManager": "yarn@4.4.0",
 	"dependencies": {
 		"@react-spring/web": "^9.5.2"
 	},
@@ -35,6 +35,7 @@
 		"@rollup/plugin-node-resolve": "^15.1.0",
 		"@rollup/plugin-replace": "^5.0.2",
 		"@rollup/plugin-typescript": "^11.1.2",
+		"@types/eslint": "^9.6.0",
 		"@types/node": "^22.0.0",
 		"@types/react": "^18.0.15",
 		"@types/react-dom": "^18.0.6",
@@ -42,10 +43,10 @@
 		"@typescript-eslint/eslint-plugin": "^8.0.0",
 		"@typescript-eslint/parser": "^8.0.0",
 		"@web/rollup-plugin-html": "^2.1.2",
-		"@yarnpkg/sdks": "^3.0.0-rc.48",
+		"@yarnpkg/sdks": "^3.2.0",
 		"eslint": "^9.0.0",
 		"eslint-config-xo-react": "^0.27.0",
-		"eslint-config-xo-typescript": "^5.0.0",
+		"eslint-config-xo-typescript": "^6.0.0",
 		"eslint-import-resolver-node": "^0.3.6",
 		"eslint-plugin-react": "^7.30.1",
 		"eslint-plugin-react-hooks": "^4.6.0",

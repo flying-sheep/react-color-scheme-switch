@@ -651,6 +651,74 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@stylistic/eslint-plugin-js@npm:2.6.2, @stylistic/eslint-plugin-js@npm:^2.6.2":
+  version: 2.6.2
+  resolution: "@stylistic/eslint-plugin-js@npm:2.6.2"
+  dependencies:
+    "@types/eslint": "npm:^9.6.0"
+    acorn: "npm:^8.12.1"
+    eslint-visitor-keys: "npm:^4.0.0"
+    espree: "npm:^10.1.0"
+  peerDependencies:
+    eslint: ">=8.40.0"
+  checksum: 10/f99f0128b641c953a5f8b4a3d67eab492e9294d625d8f3773ab8f23a9e42e71766094e6439865ca122168d684e26fd9bec91f941714cfab098a36439ac0f6070
+  languageName: node
+  linkType: hard
+
+"@stylistic/eslint-plugin-jsx@npm:2.6.2":
+  version: 2.6.2
+  resolution: "@stylistic/eslint-plugin-jsx@npm:2.6.2"
+  dependencies:
+    "@stylistic/eslint-plugin-js": "npm:^2.6.2"
+    "@types/eslint": "npm:^9.6.0"
+    estraverse: "npm:^5.3.0"
+    picomatch: "npm:^4.0.2"
+  peerDependencies:
+    eslint: ">=8.40.0"
+  checksum: 10/362af666f446f4a2a4e2bd6b40c620a95f529f835fc2b9ffa878f873a60a810c597a5e8792b96b89f5203a57d20ef1d314922fe298d4bc4e9fec754af000a248
+  languageName: node
+  linkType: hard
+
+"@stylistic/eslint-plugin-plus@npm:2.6.2":
+  version: 2.6.2
+  resolution: "@stylistic/eslint-plugin-plus@npm:2.6.2"
+  dependencies:
+    "@types/eslint": "npm:^9.6.0"
+    "@typescript-eslint/utils": "npm:^8.0.0"
+  peerDependencies:
+    eslint: "*"
+  checksum: 10/df6398ee9e5ea427f8ef70b825afca21e2547f340a3686c91f16432b612738610b3ca8c637053a475aedc5514b3b5a0e2d901ea3f71be24ed298ad9bd5342ff5
+  languageName: node
+  linkType: hard
+
+"@stylistic/eslint-plugin-ts@npm:2.6.2":
+  version: 2.6.2
+  resolution: "@stylistic/eslint-plugin-ts@npm:2.6.2"
+  dependencies:
+    "@stylistic/eslint-plugin-js": "npm:2.6.2"
+    "@types/eslint": "npm:^9.6.0"
+    "@typescript-eslint/utils": "npm:^8.0.0"
+  peerDependencies:
+    eslint: ">=8.40.0"
+  checksum: 10/688951760c3021f2d3e3de565ad8f9e4a38aa19e34bc023726e1d9e73b974d6b30435e84ebad025c717364799cc38adfc4d1f335f07eb2f6977cda5179ea98ed
+  languageName: node
+  linkType: hard
+
+"@stylistic/eslint-plugin@npm:^2.6.1":
+  version: 2.6.2
+  resolution: "@stylistic/eslint-plugin@npm:2.6.2"
+  dependencies:
+    "@stylistic/eslint-plugin-js": "npm:2.6.2"
+    "@stylistic/eslint-plugin-jsx": "npm:2.6.2"
+    "@stylistic/eslint-plugin-plus": "npm:2.6.2"
+    "@stylistic/eslint-plugin-ts": "npm:2.6.2"
+    "@types/eslint": "npm:^9.6.0"
+  peerDependencies:
+    eslint: ">=8.40.0"
+  checksum: 10/ec6ce95bea5184da3c4b39a9e1989229aa97733fc63ae71f34ff5ddc56520a2819b2c5051aba7094ca4c15add5244b84fd8a90e66d886daa4aafcabbfbfc917f
+  languageName: node
+  linkType: hard
+
 "@szmarczak/http-timer@npm:^4.0.5":
   version: 4.0.6
   resolution: "@szmarczak/http-timer@npm:4.0.6"
@@ -718,6 +786,16 @@ __metadata:
     "@types/estree": "npm:*"
     "@types/json-schema": "npm:*"
   checksum: 10/9e4805e770ea90a561e1f69e5edce28b8f66e92e290705100e853c7c252cf87bef654168d0d47fc60c0effbe4517dd7a8d2fa6d3f04c7f831367d568009fd368
+  languageName: node
+  linkType: hard
+
+"@types/eslint@npm:^9.6.0":
+  version: 9.6.0
+  resolution: "@types/eslint@npm:9.6.0"
+  dependencies:
+    "@types/estree": "npm:*"
+    "@types/json-schema": "npm:*"
+  checksum: 10/39fc797c671ec9c9184802b4974748cf45ee1b11d7aaaaede44426abcafd07ec7c18eb090e8f5b3387b51637ce3fdf54499472d8dd58a928f0d005cbacb573b4
   languageName: node
   linkType: hard
 
@@ -912,6 +990,29 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@typescript-eslint/eslint-plugin@npm:8.0.1, @typescript-eslint/eslint-plugin@npm:^8.0.0":
+  version: 8.0.1
+  resolution: "@typescript-eslint/eslint-plugin@npm:8.0.1"
+  dependencies:
+    "@eslint-community/regexpp": "npm:^4.10.0"
+    "@typescript-eslint/scope-manager": "npm:8.0.1"
+    "@typescript-eslint/type-utils": "npm:8.0.1"
+    "@typescript-eslint/utils": "npm:8.0.1"
+    "@typescript-eslint/visitor-keys": "npm:8.0.1"
+    graphemer: "npm:^1.4.0"
+    ignore: "npm:^5.3.1"
+    natural-compare: "npm:^1.4.0"
+    ts-api-utils: "npm:^1.3.0"
+  peerDependencies:
+    "@typescript-eslint/parser": ^8.0.0 || ^8.0.0-alpha.0
+    eslint: ^8.57.0 || ^9.0.0
+  peerDependenciesMeta:
+    typescript:
+      optional: true
+  checksum: 10/eceb49205734a2838734b11f5c6e0bdea807859426d8bef6fbd6eebcf3df389c7ff31114ad9caf3a440ea36a62d44dd4ca8c0313a57eeccce194d28da7fbe7c2
+  languageName: node
+  linkType: hard
+
 "@typescript-eslint/eslint-plugin@npm:^7.16.1":
   version: 7.18.0
   resolution: "@typescript-eslint/eslint-plugin@npm:7.18.0"
@@ -935,26 +1036,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/eslint-plugin@npm:^8.0.0":
+"@typescript-eslint/parser@npm:8.0.1, @typescript-eslint/parser@npm:^8.0.0":
   version: 8.0.1
-  resolution: "@typescript-eslint/eslint-plugin@npm:8.0.1"
+  resolution: "@typescript-eslint/parser@npm:8.0.1"
   dependencies:
-    "@eslint-community/regexpp": "npm:^4.10.0"
     "@typescript-eslint/scope-manager": "npm:8.0.1"
-    "@typescript-eslint/type-utils": "npm:8.0.1"
-    "@typescript-eslint/utils": "npm:8.0.1"
+    "@typescript-eslint/types": "npm:8.0.1"
+    "@typescript-eslint/typescript-estree": "npm:8.0.1"
     "@typescript-eslint/visitor-keys": "npm:8.0.1"
-    graphemer: "npm:^1.4.0"
-    ignore: "npm:^5.3.1"
-    natural-compare: "npm:^1.4.0"
-    ts-api-utils: "npm:^1.3.0"
+    debug: "npm:^4.3.4"
   peerDependencies:
-    "@typescript-eslint/parser": ^8.0.0 || ^8.0.0-alpha.0
     eslint: ^8.57.0 || ^9.0.0
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: 10/eceb49205734a2838734b11f5c6e0bdea807859426d8bef6fbd6eebcf3df389c7ff31114ad9caf3a440ea36a62d44dd4ca8c0313a57eeccce194d28da7fbe7c2
+  checksum: 10/d483e236d13e40f00cb6590b956caee9ea4a68c0bc338aad7463a0183e1983d08d1a31b5f9107641d06cd7bcc55d5b7cb7d48d42d9cf3c4996573d798128ec46
   languageName: node
   linkType: hard
 
@@ -973,24 +1069,6 @@ __metadata:
     typescript:
       optional: true
   checksum: 10/36b00e192a96180220ba100fcce3c777fc3e61a6edbdead4e6e75a744d9f0cbe3fabb5f1c94a31cce6b28a4e4d5de148098eec01296026c3c8e16f7f0067cb1e
-  languageName: node
-  linkType: hard
-
-"@typescript-eslint/parser@npm:^8.0.0":
-  version: 8.0.1
-  resolution: "@typescript-eslint/parser@npm:8.0.1"
-  dependencies:
-    "@typescript-eslint/scope-manager": "npm:8.0.1"
-    "@typescript-eslint/types": "npm:8.0.1"
-    "@typescript-eslint/typescript-estree": "npm:8.0.1"
-    "@typescript-eslint/visitor-keys": "npm:8.0.1"
-    debug: "npm:^4.3.4"
-  peerDependencies:
-    eslint: ^8.57.0 || ^9.0.0
-  peerDependenciesMeta:
-    typescript:
-      optional: true
-  checksum: 10/d483e236d13e40f00cb6590b956caee9ea4a68c0bc338aad7463a0183e1983d08d1a31b5f9107641d06cd7bcc55d5b7cb7d48d42d9cf3c4996573d798128ec46
   languageName: node
   linkType: hard
 
@@ -1112,7 +1190,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/utils@npm:8.0.1":
+"@typescript-eslint/utils@npm:8.0.1, @typescript-eslint/utils@npm:^8.0.0":
   version: 8.0.1
   resolution: "@typescript-eslint/utils@npm:8.0.1"
   dependencies:
@@ -1243,7 +1321,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@yarnpkg/sdks@npm:^3.0.0-rc.48":
+"@yarnpkg/sdks@npm:^3.2.0":
   version: 3.2.0
   resolution: "@yarnpkg/sdks@npm:3.2.0"
   dependencies:
@@ -1343,6 +1421,15 @@ __metadata:
   bin:
     acorn: bin/acorn
   checksum: 10/550cc5033184eb98f7fbe2e9ddadd0f47f065734cc682f25db7a244f52314eb816801b64dec7174effd978045bd1754892731a90b1102b0ede9d17a15cfde138
+  languageName: node
+  linkType: hard
+
+"acorn@npm:^8.12.1":
+  version: 8.12.1
+  resolution: "acorn@npm:8.12.1"
+  bin:
+    acorn: bin/acorn
+  checksum: 10/d08c2d122bba32d0861e0aa840b2ee25946c286d5dc5990abca991baf8cdbfbe199b05aacb221b979411a2fea36f83e26b5ac4f6b4e0ce49038c62316c1848f0
   languageName: node
   linkType: hard
 
@@ -3021,6 +3108,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"eslint-config-xo-typescript@npm:^6.0.0":
+  version: 6.0.0
+  resolution: "eslint-config-xo-typescript@npm:6.0.0"
+  dependencies:
+    "@stylistic/eslint-plugin": "npm:^2.6.1"
+    eslint-config-xo: "npm:^0.46.0"
+    typescript-eslint: "npm:^8.0.0"
+  peerDependencies:
+    eslint: ">=9.8.0"
+    typescript: ">=5.5.0"
+  checksum: 10/119ff79989fd1e63c455ec05766a6b6f584f874ec964148cc3e294598ba2be368ef5b4918a602b352d79dec333730b1910642b81a66cd8d4ecb47afffb735ed2
+  languageName: node
+  linkType: hard
+
 "eslint-config-xo@npm:^0.45.0":
   version: 0.45.0
   resolution: "eslint-config-xo@npm:0.45.0"
@@ -3029,6 +3130,19 @@ __metadata:
   peerDependencies:
     eslint: ">=8.56.0"
   checksum: 10/44b937eb985f41cfa541569f80cd2a52619e2e2e05ed48a6db6b724e77cc8fe7e42a5bc7bd8e1497bc762566dc9f6d9b2abeb392c77e423a906faf63ea6b5284
+  languageName: node
+  linkType: hard
+
+"eslint-config-xo@npm:^0.46.0":
+  version: 0.46.0
+  resolution: "eslint-config-xo@npm:0.46.0"
+  dependencies:
+    "@stylistic/eslint-plugin": "npm:^2.6.1"
+    confusing-browser-globals: "npm:1.0.11"
+    globals: "npm:^15.3.0"
+  peerDependencies:
+    eslint: ">=9.8.0"
+  checksum: 10/4f2014939228798ddffdd430a7ff05b89986210106925f9819f40d053cb4c11b36e7b3bc511377c8b504a2d88c86b7f790eedaa0044a95c96280a5fd7d286d9d
   languageName: node
   linkType: hard
 
@@ -4072,6 +4186,13 @@ __metadata:
   version: 14.0.0
   resolution: "globals@npm:14.0.0"
   checksum: 10/03939c8af95c6df5014b137cac83aa909090c3a3985caef06ee9a5a669790877af8698ab38007e4c0186873adc14c0b13764acc754b16a754c216cc56aa5f021
+  languageName: node
+  linkType: hard
+
+"globals@npm:^15.3.0":
+  version: 15.9.0
+  resolution: "globals@npm:15.9.0"
+  checksum: 10/19bca70131c5d3e0d4171deed0f8ae16adda19f18d39b67421056f1eaa160b4433c3ffc8eb69b8b19adebbbdad4834d8a0494c5fe1ae295f0f769a5c0331d794
   languageName: node
   linkType: hard
 
@@ -7126,6 +7247,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"picomatch@npm:^4.0.2":
+  version: 4.0.2
+  resolution: "picomatch@npm:4.0.2"
+  checksum: 10/ce617b8da36797d09c0baacb96ca8a44460452c89362d7cb8f70ca46b4158ba8bc3606912de7c818eb4a939f7f9015cef3c766ec8a0c6bfc725fdc078e39c717
+  languageName: node
+  linkType: hard
+
 "pify@npm:^5.0.0":
   version: 5.0.0
   resolution: "pify@npm:5.0.0"
@@ -7732,6 +7860,7 @@ __metadata:
     "@rollup/plugin-node-resolve": "npm:^15.1.0"
     "@rollup/plugin-replace": "npm:^5.0.2"
     "@rollup/plugin-typescript": "npm:^11.1.2"
+    "@types/eslint": "npm:^9.6.0"
     "@types/node": "npm:^22.0.0"
     "@types/react": "npm:^18.0.15"
     "@types/react-dom": "npm:^18.0.6"
@@ -7739,10 +7868,10 @@ __metadata:
     "@typescript-eslint/eslint-plugin": "npm:^8.0.0"
     "@typescript-eslint/parser": "npm:^8.0.0"
     "@web/rollup-plugin-html": "npm:^2.1.2"
-    "@yarnpkg/sdks": "npm:^3.0.0-rc.48"
+    "@yarnpkg/sdks": "npm:^3.2.0"
     eslint: "npm:^9.0.0"
     eslint-config-xo-react: "npm:^0.27.0"
-    eslint-config-xo-typescript: "npm:^5.0.0"
+    eslint-config-xo-typescript: "npm:^6.0.0"
     eslint-import-resolver-node: "npm:^0.3.6"
     eslint-plugin-react: "npm:^7.30.1"
     eslint-plugin-react-hooks: "npm:^4.6.0"
@@ -9060,6 +9189,20 @@ __metadata:
     is-typed-array: "npm:^1.1.13"
     possible-typed-array-names: "npm:^1.0.0"
   checksum: 10/05e96cf4ff836743ebfc593d86133b8c30e83172cb5d16c56814d7bacfed57ce97e87ada9c4b2156d9aaa59f75cdef01c25bd9081c7826e0b869afbefc3e8c39
+  languageName: node
+  linkType: hard
+
+"typescript-eslint@npm:^8.0.0":
+  version: 8.0.1
+  resolution: "typescript-eslint@npm:8.0.1"
+  dependencies:
+    "@typescript-eslint/eslint-plugin": "npm:8.0.1"
+    "@typescript-eslint/parser": "npm:8.0.1"
+    "@typescript-eslint/utils": "npm:8.0.1"
+  peerDependenciesMeta:
+    typescript:
+      optional: true
+  checksum: 10/441f41ac8657e3a796f9acc5c47b57098124b5b8203f5b20d9a954980101fddce5039851f5919da490459132eb69c1bac643d3671bc50dea36dd20f2d3a654d1
   languageName: node
   linkType: hard
 
