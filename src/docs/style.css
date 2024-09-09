@@ -45,6 +45,10 @@
 	}
 }
 
+body, header {
+	transition: background-color 0.3s;
+}
+
 .github-corner svg {
 	fill: var(--nc-tx-2);
 	color: var(--nc-bg-2);
