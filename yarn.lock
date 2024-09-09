@@ -6428,12 +6428,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mime@npm:^2":
-  version: 2.6.0
-  resolution: "mime@npm:2.6.0"
+"mime@npm:^4":
+  version: 4.0.4
+  resolution: "mime@npm:4.0.4"
   bin:
-    mime: cli.js
-  checksum: 10/7da117808b5cd0203bb1b5e33445c330fe213f4d8ee2402a84d62adbde9716ca4fb90dd6d9ab4e77a4128c6c5c24a9c4c9f6a4d720b095b1b342132d02dba58d
+    mime: bin/cli.js
+  checksum: 10/28e41053ae09cbf4186c551d7cc3cdda10c04fdf447cfdb66db096d83279889a0e0589805b15e36c37ca8b0eedfa6317f25d0514462525271f0cffa5cb0514b4
   languageName: node
   linkType: hard
 
@@ -7796,7 +7796,7 @@ __metadata:
     remark-prism: "npm:^1.3.6"
     rollup: "npm:^4.4.0"
     rollup-plugin-postcss: "npm:^4.0.2"
-    rollup-plugin-serve: "npm:^1.1.1"
+    rollup-plugin-serve: "npm:^3.0.0"
     tslib: "npm:^2.4.0"
     typescript: "npm:^5.4.3"
     unified: "npm:^11.0.4"
@@ -8156,13 +8156,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rollup-plugin-serve@npm:^1.1.1":
-  version: 1.1.1
-  resolution: "rollup-plugin-serve@npm:1.1.1"
+"rollup-plugin-serve@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "rollup-plugin-serve@npm:3.0.0"
   dependencies:
-    mime: "npm:^2"
+    mime: "npm:^4"
     opener: "npm:1"
-  checksum: 10/caac693dd5ffd3c423f3adce74c734b90de0762d229f364575a3fdda13d52e02e0c4ce373f2800299a44740353aa95ff0aea153bc50980e27a26b83d7a0c539e
+  checksum: 10/5dddb267baac772025c9cf20ef2dbf9e9a7ebefaf2be28910f4d809c9170844408fa2033797e16795965b191a5f88d79f4149af8d655d3eb9943785f24d0a7b8
   languageName: node
   linkType: hard
 
