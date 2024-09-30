@@ -46,7 +46,7 @@
 		"@yarnpkg/sdks": "^3.2.0",
 		"eslint": "^9.0.0",
 		"eslint-config-xo-react": "^0.27.0",
-		"eslint-config-xo-typescript": "^6.0.0",
+		"eslint-config-xo-typescript": "^7.0.0",
 		"eslint-import-resolver-node": "^0.3.6",
 		"eslint-plugin-react": "^7.30.1",
 		"eslint-plugin-react-hooks": "^5.1.0-rc-eb3ad065-20240822",
