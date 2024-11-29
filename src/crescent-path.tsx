@@ -1,4 +1,4 @@
-import {type SVGProps} from 'react'
+import type {SVGProps} from 'react'
 import {a, m} from './svg-path.js'
 
 type CrescentPathProperties = {
