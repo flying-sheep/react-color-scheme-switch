@@ -309,8 +309,8 @@ __metadata:
   linkType: hard
 
 "@mdx-js/rollup@npm:^3.0.0":
-  version: 3.1.0
-  resolution: "@mdx-js/rollup@npm:3.1.0"
+  version: 3.1.1
+  resolution: "@mdx-js/rollup@npm:3.1.1"
   dependencies:
     "@mdx-js/mdx": "npm:^3.0.0"
     "@rollup/pluginutils": "npm:^5.0.0"
@@ -318,7 +318,7 @@ __metadata:
     vfile: "npm:^6.0.0"
   peerDependencies:
     rollup: ">=2"
-  checksum: 10/6fb81a9ff7f12352000d753f586a1877b176b2159ba90f8d6ba7ef29c57fb7f57b9f3bce88c35176d68c41e6a0d0d20c629d8071473036136b89de89d19a112b
+  checksum: 10/d022f27209f698dec2ca5cb218a223e6877e7c6477c62e0507b2eddbc41ece947bf830fe00aed3920aba1ee9c5f1e969291b68291fcdf04e9c3d8ae4c76f9ea7
   languageName: node
   linkType: hard
 
