@@ -49,7 +49,7 @@
 		"eslint-config-xo-typescript": "^7.0.0",
 		"eslint-import-resolver-node": "^0.3.6",
 		"eslint-plugin-react": "^7.30.1",
-		"eslint-plugin-react-hooks": "^5.1.0-rc-eb3ad065-20240822",
+		"eslint-plugin-react-hooks": "^7.1.1",
 		"husky": "^9.0.6",
 		"postcss": "^8.4.16",
 		"react": "^19.2.5",
