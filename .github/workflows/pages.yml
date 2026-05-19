@@ -22,17 +22,17 @@ jobs:
         node-version:
           - "20"
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/configure-pages@v4
+      - uses: actions/checkout@v6
+      - uses: actions/configure-pages@v6
       - run: corepack enable
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
           node-version: ${{ matrix.node-version }}
           cache: yarn
       - run: yarn install
       - run: yarn build
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v5
         with:
           path: docs
       - id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
