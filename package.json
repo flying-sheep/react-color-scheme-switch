@@ -21,7 +21,7 @@
 		".": "./dist/index.js",
 		"./*": "./dist/*.js"
 	},
-	"packageManager": "yarn@4.12.0",
+	"packageManager": "yarn@4.14.1",
 	"dependencies": {
 		"@react-spring/web": "^9.5.2"
 	},
