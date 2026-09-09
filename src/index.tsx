@@ -10,11 +10,11 @@ import {useSpring, animated} from '@react-spring/web'
 
 const AnimatedMoonPath = animated(MoonPath)
 
-export type State = 'light' | 'dark' | 'auto'
+export type State = 'light' | 'dark' | 'normal'
 
 export const states: Array<{name: State, fullness: number, color: string}> = [
 	{name: 'light', fullness: 1, color: 'gold'},
-	{name: 'auto', fullness: 0.5, color: 'white'},
+	{name: 'normal', fullness: 0.5, color: 'white'},
 	{name: 'dark', fullness: 0.2, color: 'lavender'},
 ]
 
@@ -31,7 +31,7 @@ const ThemeToggle = forwardRef<SVGSVGElement, ThemeToggleProperties>(({
 	style = {height: '50px'},
 	...svgProperties
 }, reference) => {
-	const [state, setState] = useState<State>('auto')
+	const [state, setState] = useState<State>('normal')
 	const {color, x: cX, fullness} = useSpring(state2properties[state])
 
 	const handleClick = useCallback((event: React.MouseEvent<SVGSVGElement>) => {
