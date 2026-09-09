@@ -1,13 +1,5 @@
 /* Set master colors: https://github.com/xz/new.css/wiki/Customizing-Themes#legend */
 :root {
-	&[data-color-scheme="dark"] {
-		color-scheme: dark;
-	}
-
-	&[data-color-scheme="light"] {
-		color-scheme: light;
-	}
-
 	/*--nc-font-sans: ...;*/
 	/*--nc-font-mono: ...;*/
 	--nc-tx-1: light-dark(#000000, #FFFFFF);

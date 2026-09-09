@@ -18,21 +18,21 @@ it just looks like this:
 
 Click on it to see its three positions.
 They represent (from left to right):
-day/light mode, auto mode, and night/dark mode.
+day/light mode, auto/normal mode, and night/dark mode.
 
-The `onClick` event handler receives the state `'dark' | 'light' | 'auto'`.
-As an example, this page’s CSS reacts to `<html data-color-scheme="dark|light"/>`:
+The `onClick` event handler receives the state `'dark' | 'light' | 'normal'`.
+As an example, this page 
 
 ```jsx
 <ThemeToggle
   onClick={(evt, state) => {
-    document.documentElement.dataset.colorScheme = state;
+    document.documentElement.style.colorScheme = state;
   }}
 />
 ```
 
 <ThemeToggle
   onClick={(evt, state) => {
-    document.documentElement.dataset.colorScheme = state;
+    document.documentElement.style.colorScheme = state;
   }}
 />
