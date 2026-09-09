@@ -1,7 +1,9 @@
 import {
-	type CSSProperties, forwardRef, useCallback, useState,
+	type CSSProperties,
+	forwardRef,
+	useCallback,
+	useState,
 } from 'react'
-
 import {m, l, a} from './svg-path.js'
 import MoonPath from './crescent-path.js'
 import {useSpring, animated} from '@react-spring/web'
@@ -10,19 +12,17 @@ const AnimatedMoonPath = animated(MoonPath)
 
 export type State = 'light' | 'dark' | 'auto'
 
-export const states: Array<{name: State; fullness: number; color: string}> = [
+export const states: Array<{name: State, fullness: number, color: string}> = [
 	{name: 'light', fullness: 1, color: 'gold'},
 	{name: 'auto', fullness: 0.5, color: 'white'},
 	{name: 'dark', fullness: 0.2, color: 'lavender'},
 ]
 
-const state2properties = Object.fromEntries(
-	states.map(({name, ...properties}, i) => [name, {x: i / 2, ...properties}]),
-)
+const state2properties = Object.fromEntries(states.map(({name, ...properties}, i) => [name, {x: i / 2, ...properties}]))
 
 type ThemeToggleProperties = {
 	// Colors?: Record<State, string>
-	readonly onClick?: (event: React.MouseEvent<SVGSVGElement>, state: State) => void;
+	readonly onClick?: (event: React.MouseEvent<SVGSVGElement>, state: State) => void
 } & Omit<React.SVGAttributes<SVGSVGElement>, 'viewBox' | 'onClick'>
 
 const ThemeToggle = forwardRef<SVGSVGElement, ThemeToggleProperties>(({
@@ -32,11 +32,11 @@ const ThemeToggle = forwardRef<SVGSVGElement, ThemeToggleProperties>(({
 	...svgProperties
 }, reference) => {
 	const [state, setState] = useState<State>('auto')
-	const {color, x, fullness} = useSpring(state2properties[state])
+	const {color, x: cX, fullness} = useSpring(state2properties[state])
 
 	const handleClick = useCallback((event: React.MouseEvent<SVGSVGElement>) => {
 		const {x, w} = relativeCoords(event)
-		const index = Math.floor((x / w) * 3) // TODO: can clicking the last pixel make this go OOB?
+		const index = Math.floor((x / w) * 3)
 		const clickedState = states[index].name
 		// To make the middle state more discoverable,
 		// make it always switch to sth. when at the extrema.
@@ -66,7 +66,7 @@ const ThemeToggle = forwardRef<SVGSVGElement, ThemeToggleProperties>(({
 			<AnimatedMoonPath
 				fullness={fullness}
 				fill={color}
-				cx={x}
+				cx={cX}
 				cy={0.5}
 				transform='scale(.8)'
 			/>

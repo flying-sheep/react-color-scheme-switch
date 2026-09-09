@@ -53,7 +53,7 @@ const config: RollupOptions[] = [
 		watch,
 		plugins: [
 			replace({
-				// eslint-disable-next-line @typescript-eslint/naming-convention
+
 				'process.env.NODE_ENV': JSON.stringify(getNodeEnv()),
 				preventAssignment: true,
 			}),
@@ -64,12 +64,14 @@ const config: RollupOptions[] = [
 			nodeResolve(),
 			commonjs(),
 			html(),
-			...(isDevelopment && isWatching) ? [
-				serve({
-					contentBase: './docs',
-					historyApiFallback: true,
-				}),
-			] : [],
+			...(isDevelopment && isWatching)
+				? [
+					serve({
+						contentBase: './docs',
+						historyApiFallback: true,
+					}),
+				]
+				: [],
 		],
 	},
 ]

@@ -1,12 +1,12 @@
 {
 	"compilerOptions": {
-		"target": "ES2020",
+		"target": "ES2022",
 		"jsx": "react-jsx",
-		"lib": ["ES2020", "DOM"],
-		"module": "ES2020",
-		"moduleResolution": "Node",
+		"lib": ["ES2022", "DOM"],
+		"module": "preserve",
+		"moduleResolution": "bundler",
 		"strict": true,
-		"allowSyntheticDefaultImports": true
+		"types": ["node"]
 	},
 	"include": ["src/**/*", "rollup.config.ts"]
 }
