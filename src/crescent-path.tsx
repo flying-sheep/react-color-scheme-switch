@@ -1,10 +1,10 @@
-import type {SVGProps} from 'react'
+import type {JSX, SVGProps} from 'react'
 import {a, m} from './svg-path.js'
 
 type CrescentPathProperties = {
-	readonly fullness?: number;
-	readonly cx?: number;
-	readonly cy?: number;
+	readonly fullness?: number
+	readonly cx?: number
+	readonly cy?: number
 } & SVGProps<SVGPathElement>
 
 export default function CrescentPath({
