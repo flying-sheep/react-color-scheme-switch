@@ -11,11 +11,10 @@ jobs:
       contents: read
       id-token: write
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7.0.1
       - run: corepack enable
-      - uses: actions/setup-node@v6
+      - uses: actions/setup-node@v7
         with:
           node-version: "24"
-          cache: yarn
       - run: yarn install --immutable
-      - run: npm publish
+      - run: yarn npm publish --staged
