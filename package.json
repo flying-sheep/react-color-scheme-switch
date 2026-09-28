@@ -1,33 +1,42 @@
 {
 	"name": "react-color-scheme-switch",
-	"description": "Tri-state toggle to switch between light, dark, and automatic mode ☀️🌓🌒",
 	"version": "2.0.0",
+	"description": "Tri-state toggle to switch between light, dark, and automatic mode ☀️🌓🌒",
+	"license": "GPL-3.0",
+	"repository": "github:flying-sheep/react-color-scheme-switch",
+	"homepage": "https://flying-sheep.github.io/react-color-scheme-switch/",
+	"bugs": "https://github.com/flying-sheep/react-color-scheme-switch/issues",
+	"type": "module",
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"default": "./dist/index.js"
+		}
+	},
+	"sideEffects": false,
+	"engines": {
+		"node": ">=17.4"
+	},
+	"packageManager": "yarn@4.18.0",
+	"scripts": {
+		"prepare": "husky install",
+		"build": "rollup --configPlugin=typescript --config=rollup.config.ts",
+		"watch": "yarn build -w",
+		"serve": "npx serve -s docs",
+		"start": "npx concurrently 'npm:watch' 'npm:serve'",
+		"lint": "xo --fix",
+		"prepack": "yarn build"
+	},
+	"files": [
+		"./dist/",
+		"./src/"
+	],
 	"keywords": [
 		"react",
 		"typescript"
 	],
-	"license": "GPL-3.0",
-	"homepage": "https://flying-sheep.github.io/react-color-scheme-switch/",
-	"repository": "github:flying-sheep/react-color-scheme-switch",
-	"bugs": "https://github.com/flying-sheep/react-color-scheme-switch/issues",
-	"main": "dist/index.js",
-	"types": "dist/index.d.ts",
-	"type": "module",
-	"files": [
-		"./src/",
-		"./dist/"
-	],
-	"exports": {
-		".": "./dist/index.js",
-		"./*": "./dist/*.js"
-	},
-	"packageManager": "yarn@4.18.0",
 	"dependencies": {
 		"@react-spring/web": "^10.1.2"
-	},
-	"peerDependencies": {
-		"react": ">=18.2.0",
-		"react-dom": ">=18.2.0"
 	},
 	"devDependencies": {
 		"@eslint/compat": "^2.1.1",
@@ -60,7 +69,11 @@
 		"tslib": "^2.8.1",
 		"typescript": "^6.0.3",
 		"unified": "^11.0.5",
-		"xo": "^4.0.0"
+		"xo": "^5.0.1"
+	},
+	"peerDependencies": {
+		"react": ">=18.2.0",
+		"react-dom": ">=18.2.0"
 	},
 	"dependenciesMeta": {
 		"@react-spring/core": {
@@ -69,17 +82,5 @@
 	},
 	"resolutions": {
 		"xo/eslint-import-resolver-webpack": "npm:dequal@2.0.3"
-	},
-	"engines": {
-		"node": ">=17.4"
-	},
-	"scripts": {
-		"prepare": "husky install",
-		"build": "rollup --configPlugin=typescript --config=rollup.config.ts",
-		"watch": "yarn build -w",
-		"serve": "npx serve -s docs",
-		"start": "npx concurrently 'npm:watch' 'npm:serve'",
-		"lint": "xo --fix",
-		"prepack": "yarn build"
 	}
 }
