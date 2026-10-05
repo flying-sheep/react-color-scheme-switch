@@ -1,6 +1,5 @@
 import {
 	type CSSProperties,
-	forwardRef,
 	useCallback,
 	useState,
 } from 'react'
@@ -20,17 +19,21 @@ export const states: Array<{name: State, fullness: number, color: string}> = [
 
 const state2properties = Object.fromEntries(states.map(({name, ...properties}, i) => [name, {x: i / 2, ...properties}]))
 
+const defaultStyle = {height: '50px'}
+
 type ThemeToggleProperties = {
 	// Colors?: Record<State, string>
 	readonly onClick?: (event: React.MouseEvent<SVGSVGElement>, state: State) => void
+	readonly ref?: React.Ref<SVGSVGElement>
 } & Omit<React.SVGAttributes<SVGSVGElement>, 'viewBox' | 'onClick'>
 
-const ThemeToggle = forwardRef<SVGSVGElement, ThemeToggleProperties>(({
+const ThemeToggle = ({
 	onClick,
+	ref,
 	/// SVG
-	style = {height: '50px'},
+	style = defaultStyle,
 	...svgProperties
-}, reference) => {
+}: ThemeToggleProperties) => {
 	const [state, setState] = useState<State>('normal')
 	const {color, x: cX, fullness} = useSpring(state2properties[state])
 
@@ -51,7 +54,7 @@ const ThemeToggle = forwardRef<SVGSVGElement, ThemeToggleProperties>(({
 			viewBox='0 0 1 1'
 			onClick={handleClick}
 			{...svgProperties}
-			ref={reference}
+			ref={ref}
 		>
 			<path
 				d={`
@@ -72,7 +75,7 @@ const ThemeToggle = forwardRef<SVGSVGElement, ThemeToggleProperties>(({
 			/>
 		</svg>
 	)
-})
+}
 
 export default ThemeToggle
 
