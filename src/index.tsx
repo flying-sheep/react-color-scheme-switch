@@ -24,7 +24,7 @@ const defaultStyle = {height: '50px'}
 type ThemeToggleProperties = {
 	// Colors?: Record<State, string>
 	readonly onClick?: (event: React.MouseEvent<SVGSVGElement>, state: State) => void
-	ref: React.Ref<SVGSVGElement>
+	readonly ref?: React.Ref<SVGSVGElement>
 } & Omit<React.SVGAttributes<SVGSVGElement>, 'viewBox' | 'onClick'>
 
 const ThemeToggle = ({
