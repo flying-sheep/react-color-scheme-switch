@@ -2141,27 +2141,27 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@web/parse5-utils@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "@web/parse5-utils@npm:3.0.0"
+"@web/parse5-utils@npm:^3.0.1":
+  version: 3.0.1
+  resolution: "@web/parse5-utils@npm:3.0.1"
   dependencies:
     "@types/parse5": "npm:^6.0.1"
     parse5: "npm:^6.0.1"
-  checksum: 10/22b201896070845d2f8388dea87f5240c86a081f4181b48241e22fbf10aba340e9e220d8a701898eb2b9d6a9cf49ed4a5baded65c612b9d16a4757f929ce792c
+  checksum: 10/15d92b9d4faf63f2c66353dac837238878a026edbe4c8bac2dbf0a26f646f63fdfabc117f806164d155498e98c8a976b9d76c9ebe00399138a5c6e6a0803cd21
   languageName: node
   linkType: hard
 
 "@web/rollup-plugin-html@npm:^4.0.0":
-  version: 4.0.0
-  resolution: "@web/rollup-plugin-html@npm:4.0.0"
+  version: 4.0.1
+  resolution: "@web/rollup-plugin-html@npm:4.0.1"
   dependencies:
-    "@web/parse5-utils": "npm:^3.0.0"
+    "@web/parse5-utils": "npm:^3.0.1"
     glob: "npm:^10.0.0"
     html-minifier-terser: "npm:^7.1.0"
     lightningcss: "npm:^1.24.0"
     parse5: "npm:^6.0.1"
     picomatch: "npm:^2.3.2"
-  checksum: 10/f19d8344e0888e55d3ff065c660257f92f954da15586dca445fc81415ac27db889485dcf4057490f34c02fbb2fb3cf79e782e735394536a37d1d7155fda7f62a
+  checksum: 10/286787396bbc01caa34212c5088a5724b1b655b97c792de0322da01e59c6937f356c5f6802673550880e588c7e737fa041a22acf547a90965e69b60daac451a5
   languageName: node
   linkType: hard
 
